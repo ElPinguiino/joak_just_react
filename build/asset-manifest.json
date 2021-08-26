@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.74a63173.chunk.css",
+    "main.js": "/static/js/main.e6900ce8.chunk.js",
+    "main.js.map": "/static/js/main.e6900ce8.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8233b8b5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8233b8b5.js.map",
+    "static/js/2.2a2feda1.chunk.js": "/static/js/2.2a2feda1.chunk.js",
+    "static/js/2.2a2feda1.chunk.js.map": "/static/js/2.2a2feda1.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.74a63173.chunk.css.map": "/static/css/main.74a63173.chunk.css.map",
+    "static/js/2.2a2feda1.chunk.js.LICENSE.txt": "/static/js/2.2a2feda1.chunk.js.LICENSE.txt",
+    "static/media/danandjuan.3953ce6d.jpg": "/static/media/danandjuan.3953ce6d.jpg",
+    "static/media/image1.2558f85b.jpeg": "/static/media/image1.2558f85b.jpeg",
+    "static/media/logo.faf91469.jpeg": "/static/media/logo.faf91469.jpeg",
+    "static/media/menutwo.8e088f38.png": "/static/media/menutwo.8e088f38.png",
+    "static/media/onlinecatering.c1666cb9.png": "/static/media/onlinecatering.c1666cb9.png",
+    "static/media/svg-1.871eb366.svg": "/static/media/svg-1.871eb366.svg",
+    "static/media/svg-4.1f999f0a.svg": "/static/media/svg-4.1f999f0a.svg",
+    "static/media/svg-6.309b95c1.svg": "/static/media/svg-6.309b95c1.svg",
+    "static/media/truckmenu.ae26f794.png": "/static/media/truckmenu.ae26f794.png",
+    "static/media/video.78d75958.MOV": "/static/media/video.78d75958.MOV"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8233b8b5.js",
+    "static/js/2.2a2feda1.chunk.js",
+    "static/css/main.74a63173.chunk.css",
+    "static/js/main.e6900ce8.chunk.js"
+  ]
+}
