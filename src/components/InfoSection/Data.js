@@ -106,4 +106,3 @@ export const homeObjSix = {
     primary: true,
     darkText: true
 };
-

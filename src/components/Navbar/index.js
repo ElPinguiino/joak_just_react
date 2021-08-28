@@ -12,6 +12,8 @@ import {
     NavBtn,
     NavBtnLink 
 } from './NavbarElements';
+import Store from '../Store';
+import ReviewForm from '../ReviewForm'
 
 import logo from '../../images/logo.jpeg';
 
@@ -38,9 +40,7 @@ const Navbar = ({ toggle }) => {
         <>
             <Nav scrollNav={scrollNav}>
               <NavbarContainer>
-                  {/*
-                        <img src={logo} alt="joaklogo" height="25px" />
-                  */}
+                        {/* <img src={logo} alt="joaklogo" height="25px" /> */}
                 <NavLogo to='/' onClick={toggleHome}>Juan Of A Kind</NavLogo>
                 <MobileIcon onClick={toggle}>
                     <FaBars />
@@ -72,7 +72,14 @@ const Navbar = ({ toggle }) => {
                         >Catering</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to="store">Store</NavLinks>
+                        <NavLinks to={ReviewForm}
+                        smooth={true} duration={500} spy={true} exact='true' offset={-80}
+                        >Reviews</NavLinks>
+                    </NavItem>
+                    <NavItem>
+                        <NavLinks to={Store}
+                        smooth={true} duration={500} spy={true} exact='true' offset={-80}
+                        >Store</NavLinks>
                     </NavItem>
                 </NavMenu>
                 <NavBtn>

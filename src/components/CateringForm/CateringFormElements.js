@@ -11,7 +11,7 @@ export const CateringFormContainer = styled.div`
 export const CateringFormWrapper = styled.div`
     display: grid;
     z-index: 1;
-    height: 900px;
+    height: 1200px;
     width: 100%;
     padding-top: 80px;
     max-width: 773px;
@@ -42,4 +42,98 @@ export const ImageBg = styled.image`
     -o-object-fit: cover;
     object-fit: cover;
     background-color: transparent;
+`
+
+
+
+
+
+/* Styling of Form  */
+
+export const CateringFormInnerContainer = styled.div`
+
+`
+
+export const CateringFormInnerWrapper = styled.div`
+
+`
+
+export const CateringForm = styled.form`
+
+`
+
+export const CateringFormNameArea = styled.div`
+
+`
+
+export const CateringFormFirstName = styled.div`
+
+`
+
+export const CateringFormLastName = styled.div`
+
+`
+
+export const CateringFormContactInfoArea = styled.div`
+
+`
+
+export const CateringFormPhoneNumber = styled.div`
+
+`
+
+export const CateringFormEmail = styled.div`
+
+`
+
+export const CateringFormPackageTypeArea = styled.div`
+
+`
+
+export const CateringFormPackages = styled.div`
+
+`
+
+export const CateringFormEventInfo = styled.div`
+
+`
+
+export const CateringFormPeopleAttending = styled.div`
+
+`
+
+export const CateringFormBudget = styled.div`
+
+`
+
+export const CateringFormEventDate = styled.div`
+
+`
+
+export const CateringFormAdditionalHours = styled.div`
+
+`
+
+export const CateringFormEventLocation = styled.div`
+
+`
+
+export const CateringFormMessage = styled.div`
+
+`
+
+export const CateringFormPaymentType = styled.div`
+
+`
+
+export const Input = styled.input`
+
+`
+
+export const StyledTextArea = styled.textarea`
+
+`
+
+export const Button = styled.button`
+
 `

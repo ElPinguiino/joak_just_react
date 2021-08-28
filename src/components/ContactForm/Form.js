@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import Select from "react-select";
 import { useHistory } from 'react-router-dom';
+import { ContactFormInnerContainer, ContactFormInnerWrapper, ContactFormH1, ContactFormNameArea, ContactFormFirstName, ContactFormLastName, ContactFormPhoneNumber, ContactFormEmail, ContactFormContactType, ContactFormMessage, Input, Button } from './ContactFormElements';
 
 
 const Form = () => {
@@ -38,71 +39,69 @@ const Form = () => {
     }
 
     return (
-        <div>
-            <h1>Contact Form</h1>
-
-            <div className="container">
-                <div className="form-group">
-                    
-                <div className="form-group">
-                    <input
-                        type="text"
-                        className="form-control form-control-lg"
-                        placeholder="First Name"
-                        name="firstName"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)} />
-                </div>
-                <div className="form-group">
-                    <input
-                        type="text"
-                        className="form-control form-control-lg"
-                        placeholder="Last Name"
-                        name="lastName"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)} />
-                </div>        
-                <div className="form-group">
-                    <input
-                        type="text"
-                        className="form-control form-control-lg"
-                        placeholder="Phone Number"
-                        name="phoneNumber"
-                        value={phoneNumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)} />
-                </div>
-                <div className="form-group">     
-                    <input
-                        type="text"
-                        className="form-control form-control-lg"
-                        placeholder="Email"
-                        name="email"
-                        defaultValue={email}
-                        onChange={(e) => setEmail(e.target.value)} />
-                </div>
-                <label>Contact Type:</label>
-                <div>
-                    <Select
-                        defaultValue={contactType}
-                        onChange={setContactType}
-                        options={options}
-                    />
-                </div>
-                <div>
-                <div className="form-group">
-                    <textarea
-                        type="text"
-                        className="form-control form-control-lg"
-                        placeholder="Give us a little more info regarding your contact..."
-                        name="message"
-                        defaultValue={message}
-                        onChange={(e) => setMessage(e.target.value)} />
-                </div>
-                </div>
-                <button className="btn btn-success" onClick={addContactForm}>Submit</button>
-                </div>
-            </div>
-        </div>
+        <>
+            <ContactFormInnerContainer>
+                <ContactFormH1>Message Us!</ContactFormH1>
+                <ContactFormInnerWrapper>
+                    <ContactFormNameArea>
+                        <ContactFormFirstName>
+                            <Input
+                                type="text"
+                                className="form-control form-control-lg"
+                                placeholder="First Name"
+                                name="firstName"
+                                value={firstName}
+                                onChange={(e) => setFirstName(e.target.value)} />
+                        </ContactFormFirstName>
+                        <ContactFormLastName>
+                            <Input
+                                type="text"
+                                className="form-control form-control-lg"
+                                placeholder="Last Name"
+                                name="lastName"
+                                value={lastName}
+                                onChange={(e) => setLastName(e.target.value)} />
+                        </ContactFormLastName>
+                    </ContactFormNameArea>
+                    <ContactFormPhoneNumber>
+                        <Input
+                            type="text"
+                            className="form-control form-control-lg"
+                            placeholder="Phone Number"
+                            name="phoneNumber"
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                        />
+                    </ContactFormPhoneNumber>
+                    <ContactFormEmail>
+                        <Input
+                            type="text"
+                            className="form-control form-control-lg"
+                            placeholder="Email"
+                            name="email"
+                            defaultValue={email}
+                            onChange={(e) => setEmail(e.target.value)} />
+                    </ContactFormEmail>
+                    <ContactFormContactType>
+                        <Select
+                            defaultValue={contactType}
+                            onChange={setContactType}
+                            options={options}
+                            />
+                    </ContactFormContactType>
+                    <ContactFormMessage>
+                        <textarea
+                            type="text"
+                            className="form-control form-control-lg"
+                            placeholder="Give us a little more info regarding your contact."
+                            name="message"
+                            defaultValue={message}
+                            onChange={(e) => setMessage(e.target.value)} />
+                    </ContactFormMessage>
+                    <Button className="btn btn-success" onClick={addContactForm}>Submit</Button>
+                </ContactFormInnerWrapper>
+            </ContactFormInnerContainer>
+        </>
     );      
 };
 

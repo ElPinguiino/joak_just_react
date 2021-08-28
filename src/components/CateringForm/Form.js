@@ -2,6 +2,12 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import 
+{ 
+    CateringFormInnerContainer, CateringFormInnerWrapper, CateringForm, CateringFormNameArea, CateringFormFirstName,CateringFormLastName, CateringFormContactInfoArea, CateringFormPhoneNumber, CateringFormEmail, CateringFormPackageTypeArea,CateringFormPackages, CateringFormEventInfo, CateringFormPeopleAttending, CateringFormBudget, CateringFormEventDate, CateringFormAdditionalHours, CateringFormEventLocation, CateringFormMessage, CateringFormPaymentType, Input, StyledTextArea, Button
+    
+} 
+ from './CateringFormElements';
 
 const Form = () => {
 
@@ -48,174 +54,179 @@ const Form = () => {
 
 
     return (
-        <div>
-            <h1>Catering Form</h1>
-
-            <div className="container">
-
-                <div className="form-group">
-                        
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="First Name"
-                            name="firstName"
-                            value={firstName}
-                            onChange={(e) => setFirstName(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="Last Name"
-                            name="lastName"
-                            value={lastName}
-                            onChange={(e) => setLastName(e.target.value)} />
-                    </div>        
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="Phone Number"
-                            name="phoneNumber"
-                            deafultValue={phoneNumber}
-                            onChange={(e) => setPhoneNumber(e.target.value)} />
-                    </div>
-                    <div className="form-group">     
-                        <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="Email"
-                            name="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>The Lieutant</label>   
-                        <input
-                            type="radio"
-                            className="form-control form-control-lg"
-                            name="packageType"
-                            value={packageType}
-                            onchange={(e) => setPackageType(e.target.value)} />
-                        <label>The Captain</label>
-                        <input
-                            type="radio"
-                            className="form-control form-control-lg"
-                            name="packageType"
-                            value={packageType}
-                            onChange={(e) => setPackageType(e.target.value)} />
-                        <label>The Sargeant</label>
-                        <input
-                            type="radio"
-                            className="form-control form-control-lg"
-                            name="packageType"
-                            value={packageType}
-                            onChange={(e) => setPackageType(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="# of people attending"
-                            name="peopleAttending"
-                            value={peopleAttending}
-                            onChange={(e) => setPeopleAttending(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="Planned budget for the food"
-                            name="budget"
-                            value={budget}
-                            onChange={(e) => setBudget(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="Planned budget for the food"
-                            name="eventDate"
-                            value={eventDate}
-                            onChange={(e) => setEventDate(e.target.value)} />
-                    </div>
-                    <div>
-                        <label>1</label>
-                        <input
-                            type="radio"
-                            className="form-control form-control-lg"
-                            name="additionalHours"
-                            value={additionalHours}
-                            onChange={(e) => setAdditionalHours(e.target.value)} />
-                        <label>2</label>
-                        <input
-                            type="radio"
-                            className="form-control form-control-lg"
-                            name="additionalHours"
-                            value={additionalHours}
-                            onChange={(e) => setAdditionalHours(e.target.value)} />
-                        <label>3</label>
-                        <input
-                            type="radio"
-                            className="form-control form-control-lg"
-                            name="additionalHours"
-                            value={additionalHours}
-                            onChange={(e) => setAdditionalHours(e.target.value)} />
-                        <label>4</label>
-                        <input
-                            type="radio"
-                            className="form-control form-control-lg"
-                            name="additionalHours"
-                            value={additionalHours}
-                            onChange={(e) => setAdditionalHours(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="location"
-                            name="location"
-                            value={location}
-                            onChange={(e) => setLocation(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <textarea
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="Give us a little more info regarding your contact..."
-                            name="message"
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)} />
-                    </div>
-                    <div className="form-group">
-                        <label>Cash</label>   
-                        <input
-                            type="radio"
-                            className="form-control form-control-lg"
-                            name="paymentType"
-                            value={paymentType}
-                            onchange={(e) => setPaymentType(e.target.value)} />
-                        <label>Venmo</label>   
-                        <input
-                            type="radio"
-                            className="form-control form-control-lg"
-                            name="paymentType"
-                            value={paymentType}
-                            onchange={(e) => setPaymentType(e.target.value)} />
-                        <label>Card</label>   
-                        <input
-                            type="radio"
-                            className="form-control form-control-lg"
-                            name="paymentType"
-                            value={paymentType}
-                            onchange={(e) => setPaymentType(e.target.value)} />
-                    </div>
-                    <button className="btn btn-success" onClick={AddCateringForm}>Submit</button>
-                </div>
-            </div>
-        </div>
+        <>
+            <CateringFormInnerContainer>
+                <CateringFormInnerWrapper>
+                    <CateringForm>
+                        <CateringFormNameArea>
+                            <CateringFormFirstName>
+                                <Input
+                                        type="text"
+                                        className="form-control form-control-lg"
+                                        placeholder="First Name"
+                                        name="firstName"
+                                        value={firstName}
+                                        onChange={(e) => setFirstName(e.target.value)} />
+                            </CateringFormFirstName>
+                            <CateringFormLastName>
+                                <Input
+                                        type="text"
+                                        className="form-control form-control-lg"
+                                        placeholder="Last Name"
+                                        name="lastName"
+                                        value={lastName}
+                                        onChange={(e) => setLastName(e.target.value)} />
+                            </CateringFormLastName>
+                        </CateringFormNameArea>
+                        <CateringFormContactInfoArea>
+                            <CateringFormPhoneNumber>
+                                <Input
+                                        type="text"
+                                        className="form-control form-control-lg"
+                                        placeholder="Phone Number"
+                                        name="phoneNumber"
+                                        deafultValue={phoneNumber}
+                                        onChange={(e) => setPhoneNumber(e.target.value)} />
+                            </CateringFormPhoneNumber>
+                            <CateringFormEmail>
+                                <Input
+                                        type="text"
+                                        className="form-control form-control-lg"
+                                        placeholder="Email"
+                                        name="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)} />
+                            </CateringFormEmail>
+                        </CateringFormContactInfoArea>
+                        <CateringFormPackageTypeArea>
+                            <CateringFormPackages>
+                                <label>The Lieutant</label>   
+                                <Input
+                                    type="radio"
+                                    className="form-control form-control-lg"
+                                    name="packageType"
+                                    value={packageType}
+                                    onchange={(e) => setPackageType(e.target.value)} />
+                                <label>The Captain</label>
+                                <Input
+                                    type="radio"
+                                    className="form-control form-control-lg"
+                                    name="packageType"
+                                    value={packageType}
+                                    onChange={(e) => setPackageType(e.target.value)} />
+                                <label>The Sargeant</label>
+                                <Input
+                                    type="radio"
+                                    className="form-control form-control-lg"
+                                    name="packageType"
+                                    value={packageType}
+                                    onChange={(e) => setPackageType(e.target.value)} />
+                            </CateringFormPackages>
+                        </CateringFormPackageTypeArea>
+                        <CateringFormEventInfo>
+                            <CateringFormPeopleAttending>
+                                <Input
+                                        type="text"
+                                        className="form-control form-control-lg"
+                                        placeholder="# of people attending"
+                                        name="peopleAttending"
+                                        value={peopleAttending}
+                                        onChange={(e) => setPeopleAttending(e.target.value)} />
+                            </CateringFormPeopleAttending>
+                            <CateringFormBudget>
+                                <Input
+                                        type="text"
+                                        className="form-control form-control-lg"
+                                        placeholder="Planned budget for the food"
+                                        name="budget"
+                                        value={budget}
+                                        onChange={(e) => setBudget(e.target.value)} />
+                            </CateringFormBudget>
+                            <CateringFormEventDate>
+                                <Input
+                                        type="text"
+                                        className="form-control form-control-lg"
+                                        name="eventDate"
+                                        value={eventDate}
+                                        onChange={(e) => setEventDate(e.target.value)} />
+                            </CateringFormEventDate>
+                            <CateringFormAdditionalHours>
+                                <label>1</label>
+                                <Input
+                                    type="radio"
+                                    className="form-control form-control-lg"
+                                    name="additionalHours"
+                                    value={additionalHours}
+                                    onChange={(e) => setAdditionalHours(e.target.value)} />
+                                <label>2</label>
+                                <Input
+                                    type="radio"
+                                    className="form-control form-control-lg"
+                                    name="additionalHours"
+                                    value={additionalHours}
+                                    onChange={(e) => setAdditionalHours(e.target.value)} />
+                                <label>3</label>
+                                <Input
+                                    type="radio"
+                                    className="form-control form-control-lg"
+                                    name="additionalHours"
+                                    value={additionalHours}
+                                    onChange={(e) => setAdditionalHours(e.target.value)} />
+                                <label>4</label>
+                                <Input
+                                    type="radio"
+                                    className="form-control form-control-lg"
+                                    name="additionalHours"
+                                    value={additionalHours}
+                                    onChange={(e) => setAdditionalHours(e.target.value)} />
+                            </CateringFormAdditionalHours>
+                            <CateringFormEventLocation>
+                                <Input
+                                        type="text"
+                                        className="form-control form-control-lg"
+                                        placeholder="location"
+                                        name="location"
+                                        value={location}
+                                        onChange={(e) => setLocation(e.target.value)} />
+                            </CateringFormEventLocation>
+                        </CateringFormEventInfo>
+                        <CateringFormMessage>
+                            <StyledTextArea
+                                        type="text"
+                                        className="form-control form-control-lg"
+                                        placeholder="Give us a little more info regarding your contact..."
+                                        name="message"
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)} />
+                        </CateringFormMessage>
+                        <CateringFormPaymentType>
+                            <label>Cash</label>   
+                            <Input
+                                type="radio"
+                                className="form-control form-control-lg"
+                                name="paymentType"
+                                value={paymentType}
+                                onchange={(e) => setPaymentType(e.target.value)} />
+                            <label>Venmo</label>   
+                            <Input
+                                type="radio"
+                                className="form-control form-control-lg"
+                                name="paymentType"
+                                value={paymentType}
+                                onchange={(e) => setPaymentType(e.target.value)} />
+                            <label>Card</label>   
+                            <Input
+                                type="radio"
+                                className="form-control form-control-lg"
+                                name="paymentType"
+                                value={paymentType}
+                                onchange={(e) => setPaymentType(e.target.value)} />
+                        </CateringFormPaymentType>
+                        <Button onClick={AddCateringForm}>Submit</Button>
+                    </CateringForm>
+                </CateringFormInnerWrapper>
+            </CateringFormInnerContainer>
+        </>
     );        
 };
 
