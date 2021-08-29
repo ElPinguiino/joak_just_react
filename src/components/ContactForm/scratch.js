@@ -105,3 +105,64 @@ const Form = () => {
 };
 
 export default Form;
+
+<StyledContactFormContainer>
+    <StyledContactForm>
+        <h2>Message Us!</h2>
+        <label htmlFor="firstName"></label>
+        <StyledInput type="text" name="firstName" placeholder="First Name" />
+        <label htmlFor="lastName"></label>
+        <StyledInput type="text" name="lastName" placeholder="Last Name" />
+        <label htmlFor="phoneNumber"></label>
+        <StyledInput type="text" name="phoneNumber" placeholder="Phone Number" />
+        <label htmlFor="email"></label>
+        <StyledInput type="email" name="email" placeholder="Email" />
+        <StyledFieldSet>
+            <legend>Contact Type:</legend>
+            <label>
+                <input type="radio" value="question" name="contactType" />
+                Question
+            </label>
+            <label>
+                <input type="radio" value="concern" name="contactType" />
+                Concern
+            </label>
+            <label>
+                <input type="radio" value="feedback" name="contactType" />
+                Feedback
+            </label>
+        </StyledFieldSet>
+        <label htmlFor="message">Message</label>
+        <StyledTextArea name="message" />
+        <StyledError><p>Error Message</p></StyledError>
+        <StyledButton>Submit Contact</StyledButton>
+        <StyledError></StyledError>
+    </StyledContactForm>
+</StyledContactFormContainer>
+
+
+export const StyledContactFormContainer = styled.div`
+
+`
+
+export const StyledContactForm = styled.form`
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+`
+
+export const StyledInput = styled.input`
+
+`
+
+export const StyledTextArea = styled.textarea`
+
+`
+
+export const StyledButton = styled.button`
+
+`
+
+export const StyledError = styled.div`
+
+`

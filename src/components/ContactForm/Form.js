@@ -3,7 +3,8 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import Select from "react-select";
 import { useHistory } from 'react-router-dom';
-import { ContactFormInnerContainer, ContactFormInnerWrapper, ContactFormH1, ContactFormNameArea, ContactFormFirstName, ContactFormLastName, ContactFormPhoneNumber, ContactFormEmail, ContactFormContactType, ContactFormMessage, Input, Button } from './ContactFormElements';
+import { ContactFormInnerContainer, ContactFormInnerWrapper, ContactFormH1, ContactFormNameArea, ContactFormFirstName, ContactFormLastName, ContactFormPhoneNumber, ContactFormEmail, ContactFormContactType, ContactFormMessage, Input, Button, StyledLabel } from './ContactFormElements';
+import { StyledContactFormContainer, StyledContactForm, StyledInput, StyledFieldSet, StyledTextArea, StyledError, StyledButton, StyledH2 } from './ContactFormElements';
 
 
 const Form = () => {
@@ -12,6 +13,8 @@ const Form = () => {
         { value: "Question", label: "Question" },
         { value: "Concern", label: "Concern" },
     ]; 
+
+    const [error, setError] = useState('');
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -40,67 +43,47 @@ const Form = () => {
 
     return (
         <>
-            <ContactFormInnerContainer>
-                <ContactFormH1>Message Us!</ContactFormH1>
-                <ContactFormInnerWrapper>
-                    <ContactFormNameArea>
-                        <ContactFormFirstName>
-                            <Input
-                                type="text"
-                                className="form-control form-control-lg"
-                                placeholder="First Name"
-                                name="firstName"
-                                value={firstName}
-                                onChange={(e) => setFirstName(e.target.value)} />
-                        </ContactFormFirstName>
-                        <ContactFormLastName>
-                            <Input
-                                type="text"
-                                className="form-control form-control-lg"
-                                placeholder="Last Name"
-                                name="lastName"
-                                value={lastName}
-                                onChange={(e) => setLastName(e.target.value)} />
-                        </ContactFormLastName>
-                    </ContactFormNameArea>
-                    <ContactFormPhoneNumber>
-                        <Input
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="Phone Number"
-                            name="phoneNumber"
-                            value={phoneNumber}
-                            onChange={(e) => setPhoneNumber(e.target.value)}
-                        />
-                    </ContactFormPhoneNumber>
-                    <ContactFormEmail>
-                        <Input
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="Email"
-                            name="email"
-                            defaultValue={email}
-                            onChange={(e) => setEmail(e.target.value)} />
-                    </ContactFormEmail>
-                    <ContactFormContactType>
-                        <Select
-                            defaultValue={contactType}
-                            onChange={setContactType}
-                            options={options}
-                            />
-                    </ContactFormContactType>
-                    <ContactFormMessage>
-                        <textarea
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="Give us a little more info regarding your contact."
-                            name="message"
-                            defaultValue={message}
-                            onChange={(e) => setMessage(e.target.value)} />
-                    </ContactFormMessage>
-                    <Button className="btn btn-success" onClick={addContactForm}>Submit</Button>
-                </ContactFormInnerWrapper>
-            </ContactFormInnerContainer>
+            <StyledContactFormContainer>
+            <StyledH2>Message Us!</StyledH2>
+                <StyledContactForm>
+                    <label htmlFor="firstName"></label>
+                    <StyledInput 
+                        type="text" 
+                        name="firstName" 
+                        placeholder="First Name" 
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)} />
+                    <label htmlFor="lastName"></label>
+                    <StyledInput type="text" name="lastName" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+                    <br />
+                    <label htmlFor="phoneNumber"></label>
+                    <StyledInput type="text" name="phoneNumber" placeholder="Phone Number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}/>
+                    <label htmlFor="email"></label>
+                    <StyledInput type="email" name="email" placeholder="Email" defaultValue={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <StyledFieldSet>
+                        <legend>Contact Type</legend>
+                        <label>
+                            <input type="radio" value="Question" name="contactType" onChange={(e) => setContactType(e.target.value)} />
+                            Question
+                        </label>
+                        <label>
+                            <input type="radio" value="Concern" name="contactType" onChange={(e) => setContactType(e.target.value)} />
+                            Concern
+                        </label>
+                        <label>
+                            <input type="radio" value="Feedback" name="contactType" onChange={(e) => setContactType(e.target.value)} />
+                            Feedback
+                        </label>
+                    </StyledFieldSet>
+                    <StyledLabel htmlFor="message">Message:</StyledLabel>
+                    <br />
+                    <StyledTextArea name="message" placeholder="Give us a little more info about your contact in order to better assist you!" defaultValue={message} onChange={(e) => setMessage(e.target.value)}/>
+                    <br />
+                    <StyledError><p></p></StyledError>
+                    <StyledButton onClick={addContactForm}>Submit Contact</StyledButton>
+                    <StyledError></StyledError>
+                </StyledContactForm>
+            </StyledContactFormContainer>
         </>
     );      
 };

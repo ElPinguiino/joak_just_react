@@ -51,11 +51,14 @@ export const ImageBg = styled.image`
 /* Styling of Form  */
 
 export const CateringFormInnerContainer = styled.div`
-
+    border: 15px yellow solid;
+    width: 645px;
+    height: 835px;
 `
 
 export const CateringFormInnerWrapper = styled.div`
-
+    border: 15px purple solid;
+    height: 100%;
 `
 
 export const CateringForm = styled.form`
@@ -63,7 +66,7 @@ export const CateringForm = styled.form`
 `
 
 export const CateringFormNameArea = styled.div`
-
+    border: 5px black solid;
 `
 
 export const CateringFormFirstName = styled.div`
@@ -75,7 +78,7 @@ export const CateringFormLastName = styled.div`
 `
 
 export const CateringFormContactInfoArea = styled.div`
-
+    border: 5px black solid;
 `
 
 export const CateringFormPhoneNumber = styled.div`
@@ -87,7 +90,7 @@ export const CateringFormEmail = styled.div`
 `
 
 export const CateringFormPackageTypeArea = styled.div`
-
+    border: 5px black solid;
 `
 
 export const CateringFormPackages = styled.div`
@@ -95,7 +98,7 @@ export const CateringFormPackages = styled.div`
 `
 
 export const CateringFormEventInfo = styled.div`
-
+    border: 5px black solid;
 `
 
 export const CateringFormPeopleAttending = styled.div`
@@ -119,11 +122,11 @@ export const CateringFormEventLocation = styled.div`
 `
 
 export const CateringFormMessage = styled.div`
-
+    border: 5px black solid;
 `
 
 export const CateringFormPaymentType = styled.div`
-
+    border: 5px black solid;
 `
 
 export const Input = styled.input`
@@ -135,5 +138,19 @@ export const StyledTextArea = styled.textarea`
 `
 
 export const Button = styled.button`
+
+`
+
+
+/* Styling for Caterig Info inside of the Form */
+export const CateringFormInformation = styled.div`
+
+`
+
+export const CateringFormInformationTitle = styled.h3`
+
+`
+
+export const CateringFormInformationSubtitle = styled.p`
 
 `

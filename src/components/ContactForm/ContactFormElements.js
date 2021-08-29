@@ -33,7 +33,11 @@ export const ContactHeadingWrapper = styled.div`
     border-radius: 15px;
     border: 5px solid black;
     box-shadow: 10px 10px;
-    background-color: #29F9FC;
+    background: #00416A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFE000, #799F0C, #00416A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFE000, #799F0C, #00416A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
 `
 /* Styling for contact heading (orange box) */
 export const Heading = styled.h1`
@@ -94,7 +98,10 @@ export const ContactInfoColumn = styled.div`
     margin-left: auto;
     padding: 24px 24px;
     justify-content: center;
-    background-color: #29fca1;
+    background: #FF512F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F09819, #FF512F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F09819, #FF512F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     border-radius: 15px;
     box-shadow: 10px 10px;
     border: 5px solid black;
@@ -197,16 +204,19 @@ export const ContactFormColumn = styled.div`
     display: grid;
     z-index: 1;
     height: 480px;
-    width: 200%;
+    width: 175%;
     max-width: 1100px;
     margin-right: auto;
-    margin-left: 15px;
+    margin-left: 25px;
     padding: 24px 24px;
     justify-content: center;
     border-radius: 15px;
     border: 5px solid black;
     box-shadow: 10px 10px;
-    background-color: #29F9FC;
+    background: #AA076B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #61045F, #AA076B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #61045F, #AA076B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     @media screen and (max-width: 768px) {
     }
 `
@@ -219,16 +229,6 @@ export const FirstInnerColumn = styled.div`
     
     @media screen and (max-width: 768px) {
     }    
-`
-
-/* Container for the second row inside of our contact form*/
-export const SecondInnerColumn = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    background-color: purple;
-    @media screen and (max-width: 768px) {
-    }
 `
 
 /* Styling inside of the light blue box */
@@ -254,70 +254,91 @@ export const H4 = styled.h4`
     }
 `
 
-
-
-
-/* Styling of the actual form */
-export const ContactFormInnerContainer = styled.div`
+export const StyledContactFormContainer = styled.div`
 
 `
 
-export const ContactFormInnerWrapper = styled.div`
+export const StyledContactForm = styled.form`
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box; 
 `
 
-export const ContactFormH1 = styled.h1`
-    color: white;
-    text-align: center;
-    margin-bottom: 1rem;
-    border: 5px black solid;
+export const StyledInput = styled.input`
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 15em;
+    color: palevioletred;
+    // background: #859398;
+    border: 2px black solid;
+    box-shadow: 5px 5px;
+    border-radius: 10px;
 `
-
-export const ContactFormNameArea = styled.div`
-    border: 5px black solid;
-    width: 300px;
-`
-
-export const ContactFormFirstName = styled.div`
-
-`
-
-export const ContactFormLastName = styled.div`
-
-`
-
-export const ContactFormPhoneNumber = styled.div`
-    border: 5px black solid;
-`
-
-export const ContactFormEmail = styled.div`
-    border: 5px black solid;
-`
-
-export const ContactFormContactType = styled.div`
-    border: 5px black solid;
-`
-
-export const ContactFormMessage = styled.div`
-    border: 5px black solid;
-`
-
-export const Input = styled.input`
+export const StyledFieldSet = styled.fieldset`
     padding: 0.5em;
     margin: 0.5em;
     color: palevioletred;
     background: ;
-    border: none;
-    border-radius: 3px;
+    box-shadow: 5px 5px;
+    border: 1px solid white;
+    border-radius: 5px;
+
+    legend {
+        padding: 0 10px;
+        color: white;
+    }
+
+    label {
+        padding-right: 10px;
+        color: white;
+    }
+
+    input {
+        margin-right: 5px;
+    }
 `
 
-export const Button = styled.button`
-    margin-top: 50px;
-    background-color: white;
-    border: none;
+export const StyledTextArea = styled.textarea`
+    padding: 0.5em;
+    margin: 0.5em;
     color: black;
-    font-size: 20px;
-    padding: 15px 15px;
+    // background: #859398;
+    border: 2px white solid;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 100px;
+    color: palevioletred;
+    box-shadow: 5px 5px;
+    resize: none;
+`
+
+export const StyledButton = styled.button`
+    display: block;
+    background-color: white;
+    color: palevioletred;
+    font-size: 1rem;
+    border: black 1px solid;
+    border-radius: 10px;
+    height: 40px;
+    padding: 0 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: 5px 5px;
+`
+
+export const StyledError = styled.div`
+    color: red;
+    font-weight: 800;
+    margin: 0 0 0px 0;
+`
+
+export const StyledH2 = styled.h2`
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    color: white;
+    text-shadow: palevioletred 2px 4px;
+    font-size: 2.5rem;
+`
+
+export const StyledLabel = styled.label`
+    color: white;
 `

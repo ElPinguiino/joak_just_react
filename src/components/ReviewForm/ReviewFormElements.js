@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Carousel from './DisplayReviews';
 
 export const ReviewFormContainer = styled.div`
     background: #29f9fc;
@@ -43,4 +44,62 @@ export const ReviewFormFormField = styled.div`
     margin-bottom: 15px;
     padding: 0 15px;
     grid-area: col2;
+`
+
+export const ReactCardCarousel = styled(Carousel)`
+    margin-right: 100px;
+    padding: 24px;
+`
+
+
+
+
+/* Review Form, Form Styling */
+
+export const ReviewFormInnerContainer = styled.div`
+
+`
+
+export const ReviewFormInnerWrapper = styled.div`
+
+`
+
+export const ReviewForm = styled.div`
+
+`
+
+export const ReviewFormFirstName = styled.div`
+
+`
+
+export const ReviewFormLastInitial = styled.div`
+
+`
+
+export const ReviewFormDate = styled.div`
+
+`
+
+export const ReviewFormFoodRating = styled.div`
+
+`
+
+export const ReviewFormServiceRating = styled.div`
+
+`
+
+export const ReviewFormMessage = styled.div`
+
+`
+
+export const Input = styled.input`
+
+`
+
+export const StyledTextArea = styled.textarea`
+
+`
+
+export const Button = styled.button`
+
 `

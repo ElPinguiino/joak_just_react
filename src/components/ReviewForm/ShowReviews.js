@@ -17,7 +17,7 @@ const ShowReviews = () => {
         getReviews();
     }, [])
 
-
+    
     return (
         <div>
             <h1>Reviews</h1>

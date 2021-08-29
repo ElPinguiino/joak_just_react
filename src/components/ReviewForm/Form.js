@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Select from "react-select";
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { ReviewFormInnerContainer, ReviewFormInnerWrapper, ReviewForm, ReviewFormFirstName, ReviewFormLastInitial, ReviewFormDate, ReviewFormFoodRating, ReviewFormServiceRating, ReviewFormMessage, Input, StyledTextArea, Button } from './ReviewFormElements';
 
 const Form = () => {
     const options = [
@@ -64,68 +65,67 @@ const Form = () => {
     //     })
     // }
     return (
-        <div>
-            <h1>Review Form</h1>
-
-            <div className="container">
-                <div className="form-group">
-                    
-                <div className="form-group">
-                    <input
-                        type="text"
-                        className="form-control form-control-lg"
-                        placeholder="First Name"
-                        name="firstName"
-                        defaultValue={firstName}
-                        onChange={(e) => setFirstName(e.target.value)} />
-                </div>
-                <div className="form-group">
-                    <input
-                        type="text"
-                        className="form-control form-control-lg"
-                        placeholder="Last Initial"
-                        name="lastInitial"
-                        defaultValue={lastInitial}
-                        onChange={(e) => setLastInitial(e.target.value)} />
-                </div>
-                <div className="form-group">
-                    <input
-                        type="text"
-                        className="form-control form-control-lg"
-                        placeholder="Date Visited"
-                        name="dateVisited"
-                        defaultValue={dateVisited}
-                        onChange={(e) => setDateVisited(e.target.value)} />
-                </div>       
-                <div className="form-group">
-                <label>Food Rating:</label>       
-                    <Select
-                        defaultValue={foodRating}
-                        onChange={setFoodRating}
-                        options={options}
-                    />
-                </div>
-                <div className="form-group">
-                <label>Service Rating:</label>       
-                    <Select
-                        defaultValue={serviceRating}
-                        onChange={setServiceRating}
-                        options={options}
-                    />
-                </div>
-                <div className="form-group">
-                    <textarea
-                        type="text"
-                        className="form-control form-control-lg"
-                        placeholder="Give us a little more info regarding your contact..."
-                        name="message"
-                        defaultValue={message}
-                        onChange={(e) => setMessage(e.target.value)} />
-                </div>
-                <button className="btn btn-success" onClick={addReviewForm}>Submit</button>
-                </div>
-            </div>
-        </div>
+        <>
+            <ReviewFormInnerContainer>
+                <ReviewFormInnerWrapper>
+                    <ReviewForm>
+                        <ReviewFormFirstName>
+                            <Input
+                                type="text"
+                                className="form-control form-control-lg"
+                                placeholder="First Name"
+                                name="firstName"
+                                defaultValue={firstName}
+                                onChange={(e) => setFirstName(e.target.value)} />
+                        </ReviewFormFirstName>
+                        <ReviewFormLastInitial>
+                            <Input
+                                type="text"
+                                className="form-control form-control-lg"
+                                placeholder="Last Initial"
+                                name="lastInitial"
+                                defaultValue={lastInitial}
+                                onChange={(e) => setLastInitial(e.target.value)} />
+                        </ReviewFormLastInitial>
+                        <ReviewFormDate>
+                            <Input
+                                type="text"
+                                className="form-control form-control-lg"
+                                placeholder="Date Visited"
+                                name="dateVisited"
+                                defaultValue={dateVisited}
+                                onChange={(e) => setDateVisited(e.target.value)} />
+                        </ReviewFormDate>
+                        <ReviewFormFoodRating>
+                            <label>Food Rating:</label>       
+                                <Select
+                                    defaultValue={foodRating}
+                                    onChange={setFoodRating}
+                                    options={options}
+                                />
+                        </ReviewFormFoodRating>
+                        <ReviewFormServiceRating>
+                            <label>Service Rating:</label>       
+                                <Select
+                                    defaultValue={serviceRating}
+                                    onChange={setServiceRating}
+                                    options={options}
+                                />
+                        </ReviewFormServiceRating>
+                        <ReviewFormMessage>
+                            <StyledTextArea
+                                    type="text"
+                                    className="form-control form-control-lg"
+                                    placeholder="Give us a little more info regarding your contact..."
+                                    name="message"
+                                    defaultValue={message}
+                                    onChange={(e) => setMessage(e.target.value)} />
+                        </ReviewFormMessage>
+                        <Button onClick={addReviewForm}>Submit Review</Button>
+                    </ReviewForm>
+                </ReviewFormInnerWrapper>
+            </ReviewFormInnerContainer>
+        </>
     );        
 };
 
