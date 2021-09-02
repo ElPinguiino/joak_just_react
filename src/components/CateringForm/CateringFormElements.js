@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const CateringFormContainer = styled.div`
-    background-color: #016060;
+    background-color: black;
 
     @media screen and (max-width: 768px) {
         padding: 100px 0;
     }
 `
-/* This is the container holding the menu */
+/* This is the container holding the front of the image of our card flip  */
 export const CateringFormWrapper = styled.div`
     display: grid;
     z-index: 1;
@@ -18,35 +18,91 @@ export const CateringFormWrapper = styled.div`
     margin-right: auto;
     margin-left: auto;
     justify-content: center;
+
+    @media screen and (max-width: 768px) {
+        height: 1200px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+    }
 `
+
+/* Container that houses the front image of our card flip */
 export const CateringFormImageContainer = styled.div`
     display: grid;
     z-index: 1;
     width: 100%;
-    max-width: 700px;
+    max-width: 100%;
 `
 
-export const CateringSectionBg = styled.div`
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-`
 export const ImageBg = styled.image`
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
     background-color: transparent;
+
+    @media screen and (max-width: 768px) {
+        height: 200%;
+    }
 `
 
 
+export const StyledFrontCardContainer = styled.div`
 
+`
 
+export const StyledBackCardContainer = styled.div`
+    @media screen and (max-width: 768px) {
+        height: 1000px;
+    }
+`
+
+export const StyledImage = styled.img`
+    o-object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+    @media screen and (max-width: 768px) {
+    
+    }
+`
+
+export const StyledBackCardButton = styled.button`
+    color: red;
+    top: 800px;
+    position: absolute;
+    border: 3px #fff solid;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0 auto;
+    max-width: 550px;
+    padding: 15px 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 100%;
+
+    @media screen and (max-width: 768px) {
+        top: 1050px;
+    }
+`
+export const StyledFrontCardButton = styled.button`
+    border: 3px #fff solid;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0 auto;
+    max-width: 550px;
+    padding: 15px 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 100%;
+`
 
 /* Styling of Form  */
 
@@ -61,84 +117,99 @@ export const CateringFormInnerWrapper = styled.div`
     height: 100%;
 `
 
-export const CateringForm = styled.form`
+export const StyledCateringFormContainer = styled.div`
+    top: -900px;
+    position: relative;
 
+    @media screen and (max-width: 768px) {
+        top: -950px;
+    }
 `
 
-export const CateringFormNameArea = styled.div`
-    border: 5px black solid;
+export const StyledCateringForm = styled.form`
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box; 
+    position: relative;
 `
 
-export const CateringFormFirstName = styled.div`
-
+export const StyledInput = styled.input`
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 15em;
+    color: palevioletred;
+    // background: #859398;
+    border: 2px black solid;
+    box-shadow: 5px 5px;
+    border-radius: 10px;
 `
+export const StyledFieldSet = styled.fieldset`
+    padding: 0.5em;
+    margin: 0.5em;
+    color: palevioletred;
+    background: ;
+    box-shadow: 5px 5px;
+    border: 1px solid white;
+    border-radius: 5px;
 
-export const CateringFormLastName = styled.div`
+    legend {
+        padding: 0 10px;
+        color: white;
+    }
 
-`
+    label {
+        padding-right: 10px;
+        color: white;
+    }
 
-export const CateringFormContactInfoArea = styled.div`
-    border: 5px black solid;
-`
-
-export const CateringFormPhoneNumber = styled.div`
-
-`
-
-export const CateringFormEmail = styled.div`
-
-`
-
-export const CateringFormPackageTypeArea = styled.div`
-    border: 5px black solid;
-`
-
-export const CateringFormPackages = styled.div`
-
-`
-
-export const CateringFormEventInfo = styled.div`
-    border: 5px black solid;
-`
-
-export const CateringFormPeopleAttending = styled.div`
-
-`
-
-export const CateringFormBudget = styled.div`
-
-`
-
-export const CateringFormEventDate = styled.div`
-
-`
-
-export const CateringFormAdditionalHours = styled.div`
-
-`
-
-export const CateringFormEventLocation = styled.div`
-
-`
-
-export const CateringFormMessage = styled.div`
-    border: 5px black solid;
-`
-
-export const CateringFormPaymentType = styled.div`
-    border: 5px black solid;
-`
-
-export const Input = styled.input`
-
+    input {
+        margin-right: 5px;
+    }
 `
 
 export const StyledTextArea = styled.textarea`
-
+    padding: 0.5em;
+    margin: 0.5em;
+    color: black;
+    // background: #859398;
+    border: 2px white solid;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 100px;
+    color: palevioletred;
+    box-shadow: 5px 5px;
+    resize: none;
 `
 
-export const Button = styled.button`
+export const StyledButton = styled.button`
+    display: block;
+    background-color: white;
+    color: palevioletred;
+    font-size: 1rem;
+    border: black 1px solid;
+    border-radius: 10px;
+    height: 40px;
+    padding: 0 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: 5px 5px;
+`
 
+export const StyledError = styled.div`
+    color: red;
+    font-weight: 800;
+    margin: 0 0 0px 0;
+`
+
+export const StyledH2 = styled.h2`
+    text-align: center;
+    color: white;
+    text-shadow: palevioletred 2px 4px;
+    font-size: 2.5rem;
+`
+
+export const StyledLabel = styled.label`
+    color: white;
 `
 
 

@@ -3,6 +3,7 @@ import ReactCardCarousel from 'react-card-carousel';
 import axios from 'axios';
 import { VolumeUpTwoTone } from '@material-ui/icons';
 import Carousel from './DisplayReviews';
+import { ShowReviewContainer, ShowReviewP, StyledH2 } from './ReviewFormElements';
 
 const ShowReviews = () => {
 
@@ -20,16 +21,16 @@ const ShowReviews = () => {
     
     return (
         <div>
-            <h1>Reviews</h1>
+            <StyledH2>Reviews</StyledH2>
             {
                 reviews.map((reviews,index) => (
-                    <div>
-                        <p>{reviews.first_name} {reviews.last_initial}</p>
-                        <p>Date Visited: {reviews.date_visited}</p>
-                        <p>Food Rating: {reviews.food_rating}</p>
-                        <p>Service Rating: {reviews.service_rating}</p>
-                        <p>Review:{reviews.review_message}</p>
-                    </div>
+                    <ShowReviewContainer>
+                        <ShowReviewP>{reviews.first_name} {reviews.last_initial}</ShowReviewP>
+                        <ShowReviewP>Date Visited: {reviews.date_visited}</ShowReviewP>
+                        <ShowReviewP>Food Rating: {reviews.food_rating}</ShowReviewP>
+                        <ShowReviewP>Service Rating: {reviews.service_rating}</ShowReviewP>
+                        <ShowReviewP>Review:{reviews.review_message}</ShowReviewP>
+                    </ShowReviewContainer>
                 )
                 )
             }

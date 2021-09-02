@@ -79,9 +79,8 @@ const Form = () => {
                     <br />
                     <StyledTextArea name="message" placeholder="Give us a little more info about your contact in order to better assist you!" defaultValue={message} onChange={(e) => setMessage(e.target.value)}/>
                     <br />
-                    <StyledError><p></p></StyledError>
+                    <StyledError><p>Error Message</p></StyledError>
                     <StyledButton onClick={addContactForm}>Submit Contact</StyledButton>
-                    <StyledError></StyledError>
                 </StyledContactForm>
             </StyledContactFormContainer>
         </>

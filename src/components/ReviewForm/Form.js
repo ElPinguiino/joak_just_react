@@ -3,18 +3,12 @@ import React, { useState } from 'react';
 import Select from "react-select";
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { ReviewFormInnerContainer, ReviewFormInnerWrapper, ReviewForm, ReviewFormFirstName, ReviewFormLastInitial, ReviewFormDate, ReviewFormFoodRating, ReviewFormServiceRating, ReviewFormMessage, Input, StyledTextArea, Button } from './ReviewFormElements';
+import { ReviewFormInnerContainer, ReviewFormInnerWrapper, ReviewForm, ReviewFormFirstName, ReviewFormLastInitial, ReviewFormDate, ReviewFormFoodRating, ReviewFormServiceRating, ReviewFormMessage, Input, Button } from './ReviewFormElements';
+
+import { StyledReviewFormContainer, StyledReviewForm, StyledInput, StyledFieldSet, StyledTextArea, StyledError, StyledButton, StyledH2, StyledLabel } from './ReviewFormElements';
 
 const Form = () => {
-    const options = [
-        { value: "Not very good", label: "Not very good (1)" },
-        { value: "Not good", label: "Not good (2)" },
-        { value: "OK", label: "OK (3)" },
-        { value: "Good", label: "Good (4)" },
-        { value: "Very good", label: "Very good (5)" },
-    ];
 
-    
     const [firstName, setFirstName] = useState("")
     const [lastInitial, setLastInitial] = useState("")
     const [dateVisited, setDateVisited] = useState("")
@@ -66,65 +60,105 @@ const Form = () => {
     // }
     return (
         <>
-            <ReviewFormInnerContainer>
-                <ReviewFormInnerWrapper>
-                    <ReviewForm>
-                        <ReviewFormFirstName>
-                            <Input
-                                type="text"
-                                className="form-control form-control-lg"
-                                placeholder="First Name"
-                                name="firstName"
-                                defaultValue={firstName}
-                                onChange={(e) => setFirstName(e.target.value)} />
-                        </ReviewFormFirstName>
-                        <ReviewFormLastInitial>
-                            <Input
-                                type="text"
-                                className="form-control form-control-lg"
-                                placeholder="Last Initial"
-                                name="lastInitial"
-                                defaultValue={lastInitial}
-                                onChange={(e) => setLastInitial(e.target.value)} />
-                        </ReviewFormLastInitial>
-                        <ReviewFormDate>
-                            <Input
-                                type="text"
-                                className="form-control form-control-lg"
-                                placeholder="Date Visited"
-                                name="dateVisited"
-                                defaultValue={dateVisited}
-                                onChange={(e) => setDateVisited(e.target.value)} />
-                        </ReviewFormDate>
-                        <ReviewFormFoodRating>
-                            <label>Food Rating:</label>       
-                                <Select
-                                    defaultValue={foodRating}
-                                    onChange={setFoodRating}
-                                    options={options}
-                                />
-                        </ReviewFormFoodRating>
-                        <ReviewFormServiceRating>
-                            <label>Service Rating:</label>       
-                                <Select
-                                    defaultValue={serviceRating}
-                                    onChange={setServiceRating}
-                                    options={options}
-                                />
-                        </ReviewFormServiceRating>
-                        <ReviewFormMessage>
-                            <StyledTextArea
-                                    type="text"
-                                    className="form-control form-control-lg"
-                                    placeholder="Give us a little more info regarding your contact..."
-                                    name="message"
-                                    defaultValue={message}
-                                    onChange={(e) => setMessage(e.target.value)} />
-                        </ReviewFormMessage>
-                        <Button onClick={addReviewForm}>Submit Review</Button>
-                    </ReviewForm>
-                </ReviewFormInnerWrapper>
-            </ReviewFormInnerContainer>
+            <StyledReviewFormContainer>
+                <StyledH2>Leave Us a Review!</StyledH2>
+                <StyledReviewForm>
+                    <label htmlFor="firstName"></label>
+                    <StyledInput 
+                        type="text" 
+                        name="firstName" 
+                        placeholder="First Name" 
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)} />
+                    <label htmlFor="lastName"></label>
+                    <StyledInput 
+                        type="text" 
+                        name="lasInitial" 
+                        placeholder="Last Initial" 
+                        value={lastInitial} 
+                        onChange={(e) => setLastInitial(e.target.value)} />
+                    <label htmlFor="dateVisited"></label>
+                    <StyledInput
+                        type="text"
+                        className="form-control form-control-lg"
+                        placeholder="Date Visited"
+                        name="dateVisited"
+                        defaultValue={dateVisited}
+                        onChange={(e) => setDateVisited(e.target.value)} />
+                    <StyledFieldSet>
+                        <legend>Food Rating</legend>
+                        <label>
+                            <input 
+                                type="radio" 
+                                value="Very good" 
+                                name="foodRating" 
+                                onChange={(e) => setFoodRating(e.target.value)} />
+                                Very good
+                        </label>
+                        <label>
+                            <input 
+                                type="radio" 
+                                value="Good" 
+                                name="foodRating" 
+                                onChange={(e) => setFoodRating(e.target.value)} />
+                                Good
+                        </label>
+                        <label>
+                            <input 
+                                type="radio" 
+                                value="OK" 
+                                name="foodRating" 
+                                onChange={(e) => setFoodRating(e.target.value)} />
+                            OK
+                        </label>
+                        <label>
+                            <input 
+                                type="radio" 
+                                value="Not good" 
+                                name="foodRating" 
+                                onChange={(e) => setFoodRating(e.target.value)} />
+                            Not good
+                        </label>
+                        <label>
+                            <input 
+                                type="radio" 
+                                value="Not very good" 
+                                name="foodRating" 
+                                onChange={(e) => setFoodRating(e.target.value)} />
+                            Not very good
+                        </label>
+                    </StyledFieldSet>
+                    <StyledFieldSet>
+                        <legend>Service Rating</legend>
+                        <label>
+                            <input type="radio" value="Very good" name="serviceRating" onChange={(e) =>       setServiceRating(e.target.value)} />
+                            Very good
+                        </label>
+                        <label>
+                            <input type="radio" value="Good" name="serviceRating" onChange={(e) =>          setServiceRating(e.target.value)} />
+                            Good
+                        </label>
+                        <label>
+                            <input type="radio" value="OK" name="serviceRating" onChange={(e) =>            setServiceRating(e.target.value)} />
+                            OK
+                        </label>
+                        <label>
+                            <input type="radio" value="Not good" name="serviceRating" onChange={(e) =>          setServiceRating(e.target.value)} />
+                            Not good
+                        </label>
+                        <label>
+                            <input type="radio" value="Not very good" name="serviceRating" onChange={(e) => setServiceRating(e.target.value)} />
+                            Not very good
+                        </label>
+                    </StyledFieldSet>
+                    <StyledTextArea 
+                        name="message" 
+                        placeholder="Let us know how your experience was!" 
+                        defaultValue={message} 
+                        onChange={(e) => setMessage(e.target.value)} />
+                    <StyledButton onClick={addReviewForm}>Submit Review</StyledButton>
+                </StyledReviewForm>
+            </StyledReviewFormContainer>
         </>
     );        
 };

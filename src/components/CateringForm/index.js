@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { CateringFormContainer, CateringFormImageContainer, CateringFormWrapper, H1, CateringSectionBg, ImageBg } from './CateringFormElements';
+import { CateringFormContainer, CateringFormImageContainer, CateringFormWrapper, H1, CateringSectionBg, ImageBg, StyledFrontCardContainer, StyledImage, StyledBackCardButton, StyledFrontCardButton, StyledBackCardContainer } from './CateringFormElements';
 import background from '../../images/onlinecatering.png';
+import backofform from '../../images/backofform.png';
 import ReactCardFlip from 'react-card-flip';
 import Form from './Form';
 import MenuCard from './MenuCard';
@@ -19,18 +20,22 @@ const CateringForm = () => {
                 <CateringFormWrapper>
                     <CateringFormImageContainer>
                         <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-                            <div>
-                                <img
+                            <StyledFrontCardContainer>
+                                <StyledImage
                                     src={background}
                                     alt="Menu"
                                 />
-                              <button onClick={handleClick}>Submit A Request</button>
-                            </div>
+                              <StyledFrontCardButton onClick={handleClick}>Submit A Request</StyledFrontCardButton>
+                            </StyledFrontCardContainer>
 
-                            <div>
+                            <StyledBackCardContainer>
+                                <StyledImage 
+                                    src={backofform}
+                                    alt="Back of Form"
+                                />
                               <Form />
-                              <button onClick={handleClick}>Click to flip</button>
-                            </div>
+                              <StyledBackCardButton onClick={handleClick}>Click to flip</StyledBackCardButton>
+                            </StyledBackCardContainer>
                         </ReactCardFlip>
                     </CateringFormImageContainer>
                 </CateringFormWrapper>
