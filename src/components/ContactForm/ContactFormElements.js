@@ -18,6 +18,10 @@ export const ContactFormWrapper = styled.div`
     padding: 0 24px;
     justify-content: center;
 
+    @media screen and (max-width: 950px) {
+        height: 900px;
+    }
+
     @media screen and (max-width: 768px) {
         height: 1400px;
     }
@@ -40,6 +44,10 @@ export const ContactHeadingWrapper = styled.div`
     background: -webkit-linear-gradient(to right, #ff5858, #f857a6);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #ff5858, #f857a6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+    @media screen and (max-width: 950px) {
+        margin-bottom: -60px;
+    }
+
     @media screen and (max-width: 768px) {
         width: 85%;
     }
@@ -52,6 +60,7 @@ export const Heading = styled.h1`
     text-align: center;
     font-weight: 800;
     color: white;
+
     @media screen and (max-width: 768px) {
         font-size: 18px;
         margin-bottom: 0px;
@@ -119,6 +128,11 @@ export const ContactInfoColumn = styled.div`
     box-shadow: 10px 10px;
     border: 5px solid black;
 
+    @media screen and (max-width: 950px) {
+        width: 100%;
+        height: 600px;
+    }
+
     @media screen and (max-width: 768px) {
         width: 85%;
     }
@@ -149,6 +163,11 @@ export const ContactFormColumn = styled.div`
     background: #AA076B;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #61045F, #AA076B);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #61045F, #AA076B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    @media screen and (max-width: 950px) {
+        width: 100%;
+        height: 600px;
+    }
 
     @media screen and (max-width: 768px) {
         width: 85%;

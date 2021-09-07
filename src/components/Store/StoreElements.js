@@ -20,7 +20,6 @@ export const StoreContainer = styled.div`
 export const StoreWrapper = styled.div`
     max-width: 1000px;
     height: 800px;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
@@ -34,15 +33,17 @@ export const StoreWrapper = styled.div`
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
         padding: 0 20px;
+        margin-bottom: 80px;
     }
 `
 
 export const StoreCard = styled.div`
-    background: #010606;
+    background: #fff;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    margin-top: -200px;
     border-radius: 10px;
     max-height: 340px;
     padding: 30px;
@@ -50,22 +51,29 @@ export const StoreCard = styled.div`
     transition: all 0.2 ease-in-out;
 
     &:hover {
-        transform: scale(1.02);
+        transform: scale(1.10);
         transition: all 0.2s ease-in-out;
         cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: 8rem;
     }
 `
 export const StoreIcon = styled.img`
     height: 160px;
     width: 160px;
     margin-bottom: 10px;
+
+    @media screen and (max-width: 768px) {
+
+    }
 `
 
 export const StoreH1 = styled.h1`
     font-size: 2.5rem;
     color: #29f9fc;
-    margin-top: 64px;
-    margin-bottom: 64px;
+    margin-top: 5rem;
 
     @media screen and (max-width: 480px) {
         font-size: 2rem;
@@ -80,6 +88,6 @@ export const StoreH2 = styled.h2`
 
 export const StoreP = styled.p`
     font-size: 1rem;
-    color: #fff;
+    color: black;
     text-align: center;
 `

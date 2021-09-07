@@ -26,19 +26,25 @@ const Form = () => {
 
     const addContactForm = () => {
         const data = {
-            first_name: {firstName},
-            last_name: {lastName},
-            phone_number: {phoneNumber},
+            firstName: {firstName},
+            lastName: {lastName},
+            phoneNumber: {phoneNumber},
             email: {email},
-            contact_type: {contactType},
+            contactType: {contactType},
             message: {message}
         }
 
-        axios.post('http://127.0.0.1:8000/api/contactform/', data)
-        .then(res=> {
-            console.log(res.data)
+        axios.post('http://127.0.0.1:8000/api/contactform/',data, {
+        "headers": {
+        "content-type": "application/json",
+        },
         })
-        .catch(err => console.error(err))
+        .then(function(response) {
+        console.log(response);
+        })
+        .catch(function(error) {
+        console.log(error);
+        });
     }
 
     return (

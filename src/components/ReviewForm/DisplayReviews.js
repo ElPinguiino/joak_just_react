@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactCardCarousel from 'react-card-carousel';
+import StyledCarousel from 'react-card-carousel';
 
 class Carousel extends Component {
 
@@ -10,7 +10,9 @@ class Carousel extends Component {
       paddingTop: '80px',
       textAlign: 'center',
       background: 'black',
-      color: '#FFF',
+      border: '4px #FFF solid',
+      color: '#29f9fc',
+      marginLeft: '-24rem',
       fontSize: '12px',
       textTransform: 'uppercase',
       borderRadius: '10px',
@@ -19,7 +21,7 @@ class Carousel extends Component {
 
   render() {
     return (
-      <ReactCardCarousel autoplay={ true } autoplay_speed={ 5000 }>
+      <StyledCarousel autoplay={ true } autoplay_speed={ 5000 }>
         <div style={ Carousel.CARD_STYLE }>
           <p>Juan A.</p>
           <p>Date Visited: 08/15/2021</p>
@@ -39,7 +41,7 @@ class Carousel extends Component {
         <div style={ Carousel.CARD_STYLE }>
           Fifth Card
         </div>
-      </ReactCardCarousel>
+      </StyledCarousel>
     );
   }
 }

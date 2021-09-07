@@ -9,6 +9,7 @@ export const Nav = styled.nav`
     display: flex;
     justify-content: center;
     align-items: center;
+    list-style-type: none;
     font-size: 1rem;
     position: sticky;
     top: 0;
@@ -28,6 +29,17 @@ export const NavbarContainer = styled.div`
     padding: 0 24px;
     max-width: 1100px:
 `
+export const NavLogoImage = styled.img`
+    o-object-fit: cover;
+    object-fit: cover;
+    height: 8rem;
+    width: 8rem;
+
+    @media screen and (min-width: 1450px) {
+        height: 12rem;
+        width: 12rem;
+    }
+`
 
 export const NavLogo = styled(LinkR)`
     color: #29f9fc;
@@ -36,9 +48,22 @@ export const NavLogo = styled(LinkR)`
     font-size: 1.5rem;
     display: flex;
     align-items: center;
-    margin-left: 24px;
+    margin-top: 20px;
+    margin-left: -5rem;
     font-weight: bold;
     text-decoration: none;
+
+    @media screen and (min-width: 1450px) {
+        font-size: 2.5rem;
+    }
+
+    @media screen and (min-width: 1100px) {
+        padding-left: 3rem;
+    }
+
+    @media screen and (min-width: 450px) {
+        padding-left: 4rem;
+    }
 `
 
 export const MobileIcon = styled.div`
@@ -61,6 +86,7 @@ export const NavMenu = styled.ul`
     align-itmes: center;
     list-syle: none;
     text-align: center;
+    margin-top: 10px;
     margin-right: -22px;
 
     @media screen and (max-width: 760px) {
@@ -69,6 +95,7 @@ export const NavMenu = styled.ul`
 `
 export const NavItem = styled.li`
     height: 80px;
+    font-size: 1.25rem;
 `
 
 export const NavLinks = styled(LinkS)`
@@ -83,6 +110,10 @@ export const NavLinks = styled(LinkS)`
     &.active {
         border-bottom: 3px solid #29f9fc;
     }
+
+    @media screen and (max-width: 1100px) {
+        font-size: 1rem;
+    }
 `;
 
 export const NavBtn = styled.nav`
@@ -91,6 +122,10 @@ export const NavBtn = styled.nav`
 
     @media screen and (max-width: 760px) {
         display: none;
+    }
+
+    @media screen and (min-width: 1450px) {
+        
     }
 `
 
@@ -101,6 +136,7 @@ export const NavBtnLink = styled(LinkR)`
     padding: 10px 22px;
     color: #010606;
     font-size: 16px;
+    margin-top: 15px;
     outline: none;
     border: none;
     cursor: pointer;

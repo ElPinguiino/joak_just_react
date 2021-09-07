@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react'
-import {FaBars} from 'react-icons/fa'
+import React, {useState, useEffect} from 'react';
+import {FaBars} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 import {
     Nav, 
@@ -10,12 +11,12 @@ import {
     NavItem, 
     NavLinks,
     NavBtn,
-    NavBtnLink 
+    NavBtnLink,
+    NavLogoImage
 } from './NavbarElements';
-import Store from '../Store';
-import ReviewForm from '../ReviewForm'
 
-import logo from '../../images/logo.jpeg';
+import logo from '../../images/secondlogo.png';
+import ContactForm from '../ContactForm';
 
 const Navbar = ({ toggle }) => {
     const [scrollNav, setScrollNav] = useState(false)
@@ -40,7 +41,9 @@ const Navbar = ({ toggle }) => {
         <>
             <Nav scrollNav={scrollNav}>
               <NavbarContainer>
-                        {/* <img src={logo} alt="joaklogo" height="25px" /> */}
+                <NavLogoImage
+                    src={logo}
+                    alt = "joaklogo" />
                 <NavLogo to='/' onClick={toggleHome}>Juan Of A Kind</NavLogo>
                 <MobileIcon onClick={toggle}>
                     <FaBars />
@@ -62,7 +65,7 @@ const Navbar = ({ toggle }) => {
                         >About</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to="contact"
+                        <NavLinks to={ContactForm}
                         smooth={true} duration={500} spy={true} exact='true' offset={-80}
                         >Contact</NavLinks>
                     </NavItem>
@@ -72,12 +75,12 @@ const Navbar = ({ toggle }) => {
                         >Catering</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to={ReviewForm}
+                        <NavLinks to=''
                         smooth={true} duration={500} spy={true} exact='true' offset={-80}
                         >Reviews</NavLinks>
                     </NavItem>
                     <NavItem>
-                        <NavLinks to={Store}
+                        <NavLinks to=""
                         smooth={true} duration={500} spy={true} exact='true' offset={-80}
                         >Store</NavLinks>
                     </NavItem>

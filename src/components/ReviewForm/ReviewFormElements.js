@@ -91,10 +91,17 @@ export const ReviewFormFormField = styled.div`
     }
 `
 
-export const ReactCardCarousel = styled(Carousel)`
-    margin-right: 100px;
-    padding: 24px;
-    margin-right: 500px;
+export const StyledCarousel = styled(Carousel)`
+    height: 300px;
+    width: 300px;
+    padding-top: 80px;
+    text-align: center;
+    background: black;
+    color: #FFF;
+    margin-left: -24rem;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 10px;
 `
 
 
