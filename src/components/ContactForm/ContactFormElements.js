@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin, FaPhone, FaMapMarker, F
 
 export const ContactFormContainer = styled.div`
     background-color: #fff;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 780px) {
     }
 `
 export const ContactFormWrapper = styled.div`
@@ -18,12 +18,12 @@ export const ContactFormWrapper = styled.div`
     padding: 0 24px;
     justify-content: center;
 
-    @media screen and (max-width: 950px) {
+    @media screen and (max-width: 1050px) {
         height: 900px;
     }
 
-    @media screen and (max-width: 768px) {
-        height: 1400px;
+    @media screen and (max-width: 780px) {
+        height: 1500px;
     }
 `
 export const ContactHeadingWrapper = styled.div`
@@ -44,12 +44,12 @@ export const ContactHeadingWrapper = styled.div`
     background: -webkit-linear-gradient(to right, #ff5858, #f857a6);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #ff5858, #f857a6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    @media screen and (max-width: 950px) {
+    @media screen and (max-width: 1050px) {
         margin-bottom: -60px;
     }
 
-    @media screen and (max-width: 768px) {
-        width: 85%;
+    @media screen and (max-width: 780px) {
+        width: 50%;
     }
 `
 /* Styling for contact heading (orange box) */
@@ -61,7 +61,7 @@ export const Heading = styled.h1`
     font-weight: 800;
     color: white;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 780px) {
         font-size: 18px;
         margin-bottom: 0px;
     }
@@ -76,7 +76,7 @@ export const Subtitle = styled.h3`
     letter-spacing: 1.4px;
     text-transform: uppercase;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 780px) {
         font-size: 13px;
     }
 `
@@ -93,7 +93,7 @@ export const InnerContainer = styled.div`
     justify-content: center;
     background-color: #FFFFFF;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 780px) {
         margin-top: -580px;
     }
 `
@@ -102,7 +102,7 @@ export const ContactFormRow = styled.div`
     grid-auto-columns: minmax(auto, 1fr);
     align-items: center;
     grid-template-areas: 'col1 col2 col3';
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 700px) {
         grid-template-areas:
             'col1' 'col2 col3';
     }
@@ -128,13 +128,17 @@ export const ContactInfoColumn = styled.div`
     box-shadow: 10px 10px;
     border: 5px solid black;
 
-    @media screen and (max-width: 950px) {
+    @media screen and (max-width: 1050px) {
         width: 100%;
         height: 600px;
     }
 
-    @media screen and (max-width: 768px) {
-        width: 85%;
+    @media screen and (max-width: 780px) {
+        width: 90%;
+    }
+
+    @media screen and (max-width: 450px) {
+        width: 100%;
     }
 `
 export const Column2 = styled.div`
@@ -142,7 +146,7 @@ export const Column2 = styled.div`
     grid-column-start: 2;
     grid-area: col2 col3;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 780px) {
         grid-column-start: 1;
     }
 `
@@ -164,12 +168,17 @@ export const ContactFormColumn = styled.div`
     background: -webkit-linear-gradient(to right, #61045F, #AA076B);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #61045F, #AA076B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    @media screen and (max-width: 950px) {
-        width: 100%;
+    @media screen and (max-width: 1050px) {
+        width: 155%;
         height: 600px;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 960px) {
+        width: 105%;
+        height: 600px;
+    }
+
+    @media screen and (max-width: 780px) {
         width: 85%;
         height: 600px;
     }
@@ -282,7 +291,7 @@ export const FirstInnerColumn = styled.div`
     align-items: center;
     background-color: orange;
     
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 780px) {
     }    
 `
 
@@ -393,7 +402,7 @@ export const StyledH2 = styled.h2`
     text-shadow: palevioletred 2px 4px;
     font-size: 2.5rem;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 780px) {
         font-size: 2rem;
     }
 `

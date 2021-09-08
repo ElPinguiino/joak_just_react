@@ -35,7 +35,7 @@ export const CateringFormImageContainer = styled.div`
     max-width: 100%;
 `
 
-export const ImageBg = styled.image`
+export const ImageBg = styled.img`
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
@@ -62,6 +62,7 @@ export const StyledImage = styled.img`
     o-object-fit: cover;
     width: 100%;
     height: 100%;
+    background-color: transparent;
 
     @media screen and (max-width: 768px) {
     
@@ -69,12 +70,10 @@ export const StyledImage = styled.img`
 `
 
 export const StyledBackCardButton = styled.button`
-    color: red;
-    top: 800px;
-    position: absolute;
     border: 3px #fff solid;
     color: #fff;
     display: block;
+    background-color: transparent;
     font-size: 15px;
     font-weight: normal;
     margin: 0 auto;
@@ -84,15 +83,14 @@ export const StyledBackCardButton = styled.button`
     text-transform: uppercase;
     text-decoration: none;
     width: 100%;
-
-    @media screen and (max-width: 768px) {
-        top: 1050px;
-    }
+    top: -1075px;
+    position: relative;
 `
 export const StyledFrontCardButton = styled.button`
     border: 3px #fff solid;
     color: #fff;
     display: block;
+    background-color: transparent;
     font-size: 15px;
     font-weight: normal;
     margin: 0 auto;

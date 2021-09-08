@@ -2,14 +2,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import 
-{ 
-    CateringFormInnerContainer, CateringFormInnerWrapper, CateringForm, CateringFormNameArea, CateringFormFirstName,CateringFormLastName, CateringFormContactInfoArea, CateringFormPhoneNumber, CateringFormEmail, CateringFormPackageTypeArea,CateringFormPackages, CateringFormEventInfo, CateringFormPeopleAttending, CateringFormBudget, CateringFormEventDate, CateringFormAdditionalHours, CateringFormEventLocation, CateringFormMessage, CateringFormPaymentType, Input, Button, CateringFormInformation, CateringFormInformationTitle, CateringFormInformationSubtitle
-    
-} 
- from './CateringFormElements';
-
- import { StyledCateringFormContainer, StyledCateringForm, StyledInput, StyledFieldSet, StyledTextArea, StyledError, StyledButton, StyledH2, StyledLabel } from './CateringFormElements';
+import { StyledCateringFormContainer, StyledCateringForm, StyledInput, StyledFieldSet, StyledTextArea, StyledError, StyledButton, StyledH2, StyledLabel, CateringFormInformation, CateringFormInformationTitle, CateringFormInformationSubtitle } from './CateringFormElements';
 
 const Form = () => {
 
@@ -29,24 +22,24 @@ const Form = () => {
     const [paymentType, setPaymentType] = useState(null);
 
     const addCateringForm = async () => {
-        let formField = new FormData()
+        let formField = new FormData
 
-        formField.append('firstName', first_name)
-        formField.append('lastName', last_name)
-        formField.append('phoneNumber', phone_number)
+        formField.append('first_name', firstName)
+        formField.append('last_name', lastName)
+        formField.append('phone_number', phoneNumber)
         formField.append('email', email)
-        formField.append('packageType', package_type)
-        formField.append('peopleAttending', people_attending)
+        formField.append('package_type', packageType)
+        formField.append('people_attending', peopleAttending)
         formField.append('budget', budget)
-        formField.append('eventDate', event_date)
-        formField.append('additionalHours', additional_hours)
+        formField.append('eventDate', eventDate)
+        formField.append('additional_hours', additionalHours)
         formField.append('location', location)
         formField.append('message', message)
-        formField.append('paymentType', payment_type)
+        formField.append('payment_type', paymentType)
 
         await axios({
             method: 'post',
-            url: 'http://127.0.0.1:8000/api/cateringform/',
+            url: 'http://localhost:8000/api/cateringform/',
             data: formField
         }).then((response) => {
             console.log(response.data);
@@ -63,14 +56,14 @@ const Form = () => {
                             <label htmlFor="firstName"></label>
                                 <StyledInput 
                                     type="text" 
-                                    name="firstName" 
+                                    name="first_name" 
                                     placeholder="First Name" 
                                     value={firstName}
                                     onChange={(e) => setFirstName(e.target.value)} />
                                 <label htmlFor="lastName"></label>
                                 <StyledInput 
                                     type="text" 
-                                    name="lastName" 
+                                    name="last_name" 
                                     placeholder="Last Name" 
                                     value={lastName} 
                                     onChange={(e) => setLastName(e.target.value)} />
@@ -78,7 +71,7 @@ const Form = () => {
                                 <label htmlFor="phoneNumber"></label>
                                 <StyledInput 
                                     type="text" 
-                                    name="phoneNumber" 
+                                    name="phone_number" 
                                     placeholder="Phone Number" 
                                     value={phoneNumber} 
                                     onChange={(e) => setPhoneNumber(e.target.value)} />
@@ -88,26 +81,26 @@ const Form = () => {
                                     name="email" 
                                     placeholder="Email" 
                                     defaultValue={email} 
-                                    onChange={(e) => setEma(e.target.value)}/>
+                                    onChange={(e) => setEmail(e.target.value)}/>
                                 <StyledFieldSet>
                                     <legend>Contact Type</legend>
                                     <label>
-                                        <input type="radio" value="The Lieutant" name="packageType" onChange={(e) => setPackageType(e.target.value)} />
+                                        <input type="radio" value="The Lieutant" name="package_type" onChange={(e) => setPackageType(e.target.value)} />
                                         The Lieutant
                                     </label>
                                     <label>
-                                        <input type="radio" value="The Captain" name="packageType" onChange={(e) => setPackageType(e.target.value)} />
+                                        <input type="radio" value="The Captain" name="package_type" onChange={(e) => setPackageType(e.target.value)} />
                                         The Captain
                                     </label>
                                     <label>
-                                        <input type="radio" value="The Sargeant" name="packageType" onChange={(e) => setPackageType(e.target.value)} />
+                                        <input type="radio" value="The Sargeant" name="package_type" onChange={(e) => setPackageType(e.target.value)} />
                                         The Sargeant
                                     </label>
                                 </StyledFieldSet>
                                 <label htmlFor="peopleAttending"></label>
                                 <StyledInput 
                                     type="text" 
-                                    name="peopleAttending" 
+                                    name="people_attending" 
                                     placeholder="How many people for your event?" 
                                     value={peopleAttending}
                                     onChange={(e) => setPeopleAttending(e.target.value)} />
@@ -121,26 +114,26 @@ const Form = () => {
                                 <label htmlFor="eventDate"></label>
                                 <StyledInput 
                                     type="text" 
-                                    name="eventDate" 
+                                    name="event_date" 
                                     placeholder="Date of your event" 
                                     value={eventDate} 
                                     onChange={(e) => setEventDate(e.target.value)} />
                                 <StyledFieldSet>
                                     <legend>Additional Hours</legend>
                                     <label>
-                                        <input type="radio" value="1" name="additionalHours" onChange={(e) => setAdditionalHours(e.target.value)} />
+                                        <input type="radio" value="1" name="additional_hours" onChange={(e) => setAdditionalHours(e.target.value)} />
                                         1 Hour
                                     </label>
                                     <label>
-                                        <input type="radio" value="2" name="additionalHours" onChange={(e) => setAdditionalHours(e.target.value)} />
+                                        <input type="radio" value="2" name="additional_hours" onChange={(e) => setAdditionalHours(e.target.value)} />
                                         2 Hours
                                     </label>
                                     <label>
-                                        <input type="radio" value="3" name="additionalHours" onChange={(e) => setAdditionalHours(e.target.value)} />
+                                        <input type="radio" value="3" name="additional_hours" onChange={(e) => setAdditionalHours(e.target.value)} />
                                         3 Hours
                                     </label>
                                     <label>
-                                        <input type="radio" value="4" name="additionalHours" onChange={(e) => setAdditionalHours(e.target.value)} />
+                                        <input type="radio" value="4" name="additional_hours" onChange={(e) => setAdditionalHours(e.target.value)} />
                                         4 Hours
                                     </label>
                                 </StyledFieldSet>
@@ -162,15 +155,15 @@ const Form = () => {
                                 <StyledFieldSet>
                                     <legend>Payment Type</legend>
                                     <label>
-                                        <input type="radio" value="Cash" name="paymentType" onChange={(e) => setPaymentType(e.target.value)} />
+                                        <input type="radio" value="Cash" name="payment_type" onChange={(e) => setPaymentType(e.target.value)} />
                                         Cash
                                     </label>
                                     <label>
-                                        <input type="radio" value="Venmo" name="paymentType" onChange={(e) => setPaymentType(e.target.value)} />
+                                        <input type="radio" value="Venmo" name="payment_type" onChange={(e) => setPaymentType(e.target.value)} />
                                         Venmo
                                     </label>
                                     <label>
-                                        <input type="radio" value="Card" name="paymentType" onChange={(e) => setPaymentType(e.target.value)} />
+                                        <input type="radio" value="Card" name="payment_type" onChange={(e) => setPaymentType(e.target.value)} />
                                         Card
                                     </label>
                                 </StyledFieldSet>

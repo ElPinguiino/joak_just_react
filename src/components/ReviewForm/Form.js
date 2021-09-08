@@ -16,48 +16,27 @@ const Form = () => {
     const [serviceRating, setServiceRating] = useState(null);
     const [message, setMessage] = useState("")
 
-    const addReviewForm = () => {
-        const data = {
-            first_name: {firstName},
-            last_initial: {lastInitial},
-            date_visited: {dateVisited},
-            food_rating: {foodRating},
-            service_rating: {serviceRating},
-            message: {message}
-        }
+    let history = useHistory();
 
-        axios.post('http://127.0.0.1:8000/api/reviewform/', data)
-        .then(res=> {
-            console.log(res.data)
+    const addReviewForm = async () => {
+        let formField = new FormData
+        formField.append('first_name', firstName)
+        formField.append('last_initial', lastInitial)
+        formField.append('date_visited', dateVisited)
+        formField.append('food_rating', foodRating)
+        formField.append('service_rating', serviceRating)
+        formField.append('message', message)
+
+        await axios({
+            method: 'post',
+            url: 'http://localhost:8000/api/reviewform/',
+            data: formField
+        }).then((response) => {
+            console.log(response.data);
+            history.push('/')
         })
-        .catch(err => console.error(err))
     }
 
-
-
-    // let history = useHistory();
-
-    
-    
-    // const addReviewForm = async () => {
-    //     let formField = new FormData()
-
-    //     formField.append('firstName', first_name)
-    //     formField.append('lastInitial', first_initial)
-    //     formField.append('dateVisited', date_visited)
-    //     formField.append('foodRating', food_rating)
-    //     formField.append('serviceRating', service_rating)
-    //     formField.append('message', message)
-
-    //     await axios({
-    //         method: 'post',
-    //         url: 'http://127.0.0.1:8000/api/reviewform/',
-    //         data: formField
-    //     }).then((response) => {
-    //         console.log(response.data);
-    //         history.push('/')
-    //     })
-    // }
     return (
         <>
             <StyledReviewFormContainer>
@@ -66,14 +45,14 @@ const Form = () => {
                     <label htmlFor="firstName"></label>
                     <StyledInput 
                         type="text" 
-                        name="firstName" 
+                        name="first_name" 
                         placeholder="First Name" 
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)} />
                     <label htmlFor="lastName"></label>
                     <StyledInput 
                         type="text" 
-                        name="lasInitial" 
+                        name="last_initial" 
                         placeholder="Last Initial" 
                         value={lastInitial} 
                         onChange={(e) => setLastInitial(e.target.value)} />
@@ -82,7 +61,7 @@ const Form = () => {
                         type="text"
                         className="form-control form-control-lg"
                         placeholder="Date Visited"
-                        name="dateVisited"
+                        name="date_visited"
                         defaultValue={dateVisited}
                         onChange={(e) => setDateVisited(e.target.value)} />
                     <StyledFieldSet>
@@ -91,7 +70,7 @@ const Form = () => {
                             <input 
                                 type="radio" 
                                 value="Very good" 
-                                name="foodRating" 
+                                name="food_rating" 
                                 onChange={(e) => setFoodRating(e.target.value)} />
                                 Very good
                         </label>
@@ -99,7 +78,7 @@ const Form = () => {
                             <input 
                                 type="radio" 
                                 value="Good" 
-                                name="foodRating" 
+                                name="food_rating" 
                                 onChange={(e) => setFoodRating(e.target.value)} />
                                 Good
                         </label>
@@ -107,7 +86,7 @@ const Form = () => {
                             <input 
                                 type="radio" 
                                 value="OK" 
-                                name="foodRating" 
+                                name="food_rating" 
                                 onChange={(e) => setFoodRating(e.target.value)} />
                             OK
                         </label>
@@ -115,7 +94,7 @@ const Form = () => {
                             <input 
                                 type="radio" 
                                 value="Not good" 
-                                name="foodRating" 
+                                name="food_rating" 
                                 onChange={(e) => setFoodRating(e.target.value)} />
                             Not good
                         </label>
@@ -123,7 +102,7 @@ const Form = () => {
                             <input 
                                 type="radio" 
                                 value="Not very good" 
-                                name="foodRating" 
+                                name="food_rating" 
                                 onChange={(e) => setFoodRating(e.target.value)} />
                             Not very good
                         </label>
@@ -131,23 +110,23 @@ const Form = () => {
                     <StyledFieldSet>
                         <legend>Service Rating</legend>
                         <label>
-                            <input type="radio" value="Very good" name="serviceRating" onChange={(e) =>       setServiceRating(e.target.value)} />
+                            <input type="radio" value="Very good" name="service_rating" onChange={(e) =>       setServiceRating(e.target.value)} />
                             Very good
                         </label>
                         <label>
-                            <input type="radio" value="Good" name="serviceRating" onChange={(e) =>          setServiceRating(e.target.value)} />
+                            <input type="radio" value="Good" name="service_rating" onChange={(e) =>          setServiceRating(e.target.value)} />
                             Good
                         </label>
                         <label>
-                            <input type="radio" value="OK" name="serviceRating" onChange={(e) =>            setServiceRating(e.target.value)} />
+                            <input type="radio" value="OK" name="service_rating" onChange={(e) =>            setServiceRating(e.target.value)} />
                             OK
                         </label>
                         <label>
-                            <input type="radio" value="Not good" name="serviceRating" onChange={(e) =>          setServiceRating(e.target.value)} />
+                            <input type="radio" value="Not good" name="service_rating" onChange={(e) =>          setServiceRating(e.target.value)} />
                             Not good
                         </label>
                         <label>
-                            <input type="radio" value="Not very good" name="serviceRating" onChange={(e) => setServiceRating(e.target.value)} />
+                            <input type="radio" value="Not very good" name="service_rating" onChange={(e) => setServiceRating(e.target.value)} />
                             Not very good
                         </label>
                     </StyledFieldSet>

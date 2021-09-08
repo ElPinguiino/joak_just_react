@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const StoreContainer = styled.div`
-    height: 800 px;
+    height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +12,7 @@ export const StoreContainer = styled.div`
         height: 1100px;
     }
 
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 480px) {
         height: 1300px;
     }
 `
@@ -34,6 +34,12 @@ export const StoreWrapper = styled.div`
         grid-template-columns: 1fr;
         padding: 0 20px;
         margin-bottom: 80px;
+    }
+
+    @media screen and (min-width: 480px) {
+        height: 1000px;
+        margin-bottom: 100px;
+        margin-top: 80px;
     }
 `
 
@@ -58,6 +64,10 @@ export const StoreCard = styled.div`
 
     @media screen and (max-width: 768px) {
         margin-top: 8rem;
+    }
+
+    @media screen and (min-width: 480px) {
+        margin-top: 0px;
     }
 `
 export const StoreIcon = styled.img`

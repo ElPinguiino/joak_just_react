@@ -28,16 +28,31 @@ export const NavbarContainer = styled.div`
     width: 100%;
     padding: 0 24px;
     max-width: 1100px:
+
+    @media screen and (max-width: 450px) {
+
+    }
 `
 export const NavLogoImage = styled.img`
     o-object-fit: cover;
     object-fit: cover;
     height: 8rem;
     width: 8rem;
+    margin-right: 15px;
+    margin-top: -0.25rem;
 
-    @media screen and (min-width: 1450px) {
+    @media screen and (min-width: 1550px) {
         height: 12rem;
         width: 12rem;
+    }
+
+    @media screen and (max-width: 950px) {
+        margin-right: 2rem;
+        margin-left: -2rem;
+    }
+
+    @media screen and (max-width: 450px) {
+        margin-left: -1.5rem;
     }
 `
 
@@ -53,25 +68,38 @@ export const NavLogo = styled(LinkR)`
     font-weight: bold;
     text-decoration: none;
 
-    @media screen and (min-width: 1450px) {
+    @media screen and (min-width: 1550px) {
         font-size: 2.5rem;
     }
 
-    @media screen and (min-width: 1100px) {
+    @media screen and (max-width: 1100px) {
         padding-left: 3rem;
+        font-size
     }
 
-    @media screen and (min-width: 450px) {
-        padding-left: 4rem;
+    @media screen and (max-width: 850px) {
+        margin-right: 12rem;
+    }
+
+    @media screen and (max-width: 525px) {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    @media screen and (max-width: 460px) {
+        font-size: 1rem;
+        font-weight: bold;
     }
 `
 
 export const MobileIcon = styled.div`
     display: none;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 850px) {
         display: block;
-        position: absolute:
+        position: absolute;
+        margin-right: 2rem;
+        margin-top: 34px;
         top: 0;
         right: 0;
         transform translate{-100%, 46%};
@@ -89,7 +117,7 @@ export const NavMenu = styled.ul`
     margin-top: 10px;
     margin-right: -22px;
 
-    @media screen and (max-width: 760px) {
+    @media screen and (max-width: 850px) {
         display: none;
     }
 `
@@ -106,13 +134,15 @@ export const NavLinks = styled(LinkS)`
     padding: 0 1rem;
     height: 100%;
     cursor: pointer;
+    text-decoration: none;
 
     &.active {
         border-bottom: 3px solid #29f9fc;
     }
 
     @media screen and (max-width: 1100px) {
-        font-size: 1rem;
+        font-size: 1.15rem;
+        padding: 0 0.5rem;
     }
 `;
 
@@ -120,12 +150,8 @@ export const NavBtn = styled.nav`
     display: flex;
     align-items: center;
 
-    @media screen and (max-width: 760px) {
+    @media screen and (max-width: 850px) {
         display: none;
-    }
-
-    @media screen and (min-width: 1450px) {
-        
     }
 `
 
@@ -147,5 +173,22 @@ export const NavBtnLink = styled(LinkR)`
         transition: all 0.2s ease-in-out;
         background: #fff;
         color: #010686;
+    }
+
+    @media screen and (max-width: 1100px) {
+        font-size: 15px;
+        padding: 8px 18px;
+    }
+
+
+    @media screen and (max-width: 950px) {
+        font-size: 12px;
+        font-weight: 400;
+        padding: 8px 18px;
+    }
+
+    @media screen and (max-width: 720px) {
+        font-size: 10px;
+        padding: 8px 18px;
     }
 `

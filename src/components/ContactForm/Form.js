@@ -3,18 +3,14 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import Select from "react-select";
 import { useHistory } from 'react-router-dom';
-import { ContactFormInnerContainer, ContactFormInnerWrapper, ContactFormH1, ContactFormNameArea, ContactFormFirstName, ContactFormLastName, ContactFormPhoneNumber, ContactFormEmail, ContactFormContactType, ContactFormMessage, Input, Button, StyledLabel } from './ContactFormElements';
-import { StyledContactFormContainer, StyledContactForm, StyledInput, StyledFieldSet, StyledTextArea, StyledError, StyledButton, StyledH2 } from './ContactFormElements';
+import { StyledContactFormContainer, StyledContactForm, StyledInput, StyledFieldSet, StyledTextArea, StyledError, StyledButton, StyledH2 , StyledLabel} from './ContactFormElements';
 
 
 const Form = () => {
-    const options = [
-        { value: "Feedback", label: "Feedback" },
-        { value: "Question", label: "Question" },
-        { value: "Concern", label: "Concern" },
-    ]; 
 
     const [error, setError] = useState('');
+
+    let history = useHistory();
 
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -23,28 +19,25 @@ const Form = () => {
     const [contactType, setContactType] = useState(null);
     const [message, setMessage] = useState("")
     // const [image, setImage] = useState(null)
+    
+    const addContactForm = async () => {
+        let formField = new FormData()
+        formField.append('firstName', firstName)
+        formField.append('lastName', lastName)
+        formField.append('phoneNumber', phoneNumber)
+        formField.append('email', email)
+        formField.append('contactTyple', contactType)
+        formField.append('message', message)
 
-    const addContactForm = () => {
-        const data = {
-            firstName: {firstName},
-            lastName: {lastName},
-            phoneNumber: {phoneNumber},
-            email: {email},
-            contactType: {contactType},
-            message: {message}
-        }
+        await axios({
+            method: 'post',
+            url:'http://localhost:8000/api/contactform/',
+            data: formField
+          }).then(response=>{
+            console.log(response.data);
+            history.push('/')
+          })
 
-        axios.post('http://127.0.0.1:8000/api/contactform/',data, {
-        "headers": {
-        "content-type": "application/json",
-        },
-        })
-        .then(function(response) {
-        console.log(response);
-        })
-        .catch(function(error) {
-        console.log(error);
-        });
     }
 
     return (
