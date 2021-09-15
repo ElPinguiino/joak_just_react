@@ -15,8 +15,6 @@ import {
     Img
 } from './InfoSectionElements';
 
-import ContactForm from '../ContactForm'
-
 const InfoSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, description, buttonLabel, img, alt, primary, dark, dark2}) => {
     return (
         <>

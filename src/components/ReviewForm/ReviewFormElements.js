@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Carousel from './DisplayReviews';
 
 export const ReviewFormContainer = styled.div`
     background: #FFFFFF;
@@ -91,19 +90,22 @@ export const ReviewFormFormField = styled.div`
     }
 `
 
-export const StyledCarousel = styled(Carousel)`
-    height: 300px;
-    width: 300px;
-    padding-top: 80px;
-    text-align: center;
-    background: black;
-    color: #FFF;
-    margin-left: -24rem;
-    font-size: 12px;
-    text-transform: uppercase;
-    border-radius: 10px;
-`
+// export const StyledCarousel = styled(Carousel)`
+//     height: 300px;
+//     width: 300px;
+//     padding-top: 80px;
+//     text-align: center;
+//     background: black;
+//     color: #FFF;
+//     margin-left: -24rem;
+//     font-size: 12px;
+//     text-transform: uppercase;
+//     border-radius: 10px;
+// `
 
+export const CarouselContainer = styled.div`
+
+`
 
 export const StyledReviewFormContainer = styled.div`
     

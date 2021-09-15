@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { ReviewFormContainer, ReviewFormWrapper, ReviewFormRow, ReviewFormContent, ReviewFormFormField, StyledH2 } from './ReviewFormElements';
+import { ReviewFormContainer, ReviewFormWrapper, ReviewFormRow, ReviewFormContent, ReviewFormFormField, StyledH2, CarouselContainer } from './ReviewFormElements';
 import Form from './Form';
-import ShowReviews from './ShowReviews';
-import Carousel from './DisplayReviews';
+import CarouselComponent  from '../ReviewForm/Carousel/Carousel'
 
 const ReviewForm = () => {
     return (
         <>
-            <ReviewFormContainer>
+            <ReviewFormContainer id="reviews">
                 <ReviewFormWrapper>
                     <ReviewFormRow>
                         <ReviewFormContent>
                         <StyledH2>Reviews</StyledH2>
-                            <Carousel />
+                        <CarouselContainer>
+                            <CarouselComponent />
+                        </CarouselContainer>
                         </ReviewFormContent>
                         <ReviewFormFormField>
                             <Form />

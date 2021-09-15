@@ -7,7 +7,7 @@ const ContactForm = () => {
 
     return (
         <>
-            <ContactFormContainer>
+            <ContactFormContainer id="contact">
                 <ContactFormWrapper>
                     <ContactHeadingWrapper>
                     <Heading>Contact Us</Heading>

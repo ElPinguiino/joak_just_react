@@ -319,7 +319,7 @@ export const H4 = styled.h4`
 `
 
 export const StyledContactFormContainer = styled.div`
-
+    
 `
 
 export const StyledContactForm = styled.form`
@@ -394,6 +394,10 @@ export const StyledError = styled.div`
     color: red;
     font-weight: 800;
     margin: 0 0 0px 0;
+`
+
+export const StyledSuccess = styled.div`
+    color: green;
 `
 
 export const StyledH2 = styled.h2`

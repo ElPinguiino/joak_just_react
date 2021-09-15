@@ -6,7 +6,7 @@ import { StoreContainer, StoreH1, StoreWrapper, StoreCard, StoreIcon, StoreH2, S
 
 const Store = () => {
     return (
-        <StoreContainer>
+        <StoreContainer id="store">
             <StoreH1>Store</StoreH1>
             <StoreWrapper>
                 <StoreCard>

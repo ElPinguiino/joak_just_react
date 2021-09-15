@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Modal from './Modal'
 
 export const CateringFormContainer = styled.div`
     background-color: black;
@@ -211,7 +212,30 @@ export const StyledLabel = styled.label`
 `
 
 
-/* Styling for Caterig Info inside of the Form */
+
+/* Styling for Caterig Info inside of the Form Modal */
+export const StyledModalContainer = styled.div`
+    top: -1150px;
+    position: relative;
+    margin-right: auto;
+    margin-left: 18rem;
+
+    @media screen and (max-width: 768px) {
+        top: -1150px;
+        position: relative;
+        margin-right: auto;
+        margin-left: 18rem;
+    }
+`
+
+export const StyledModalButton = styled.button`
+
+`
+
+export const StyledModal = styled(Modal)`
+
+`
+
 export const CateringFormInformation = styled.div`
 
 `
@@ -223,3 +247,4 @@ export const CateringFormInformationTitle = styled.h3`
 export const CateringFormInformationSubtitle = styled.p`
 
 `
+

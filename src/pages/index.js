@@ -3,7 +3,7 @@ import MainSection from '../components/MainSection';
 import InfoSection from '../components/InfoSection';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
-import { homeObjOne, homeObjThree, homeObjTwo, homeObjFour, homeObjFive } from '../components/InfoSection/Data';
+import { homeObjOne, homeObjThree, homeObjTwo } from '../components/InfoSection/Data';
 import Store from '../components/Store'
 import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';
