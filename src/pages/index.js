@@ -4,11 +4,13 @@ import InfoSection from '../components/InfoSection';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import { homeObjOne, homeObjThree, homeObjTwo } from '../components/InfoSection/Data';
+import { homeObjUno } from '../components/MenuSection/Data';
 import Store from '../components/Store'
 import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';
 import CateringForm from '../components/CateringForm';
 import ReviewForm from '../components/ReviewForm';
+import MenuSection from '../components/MenuSection';
 
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +27,7 @@ const Home = () => {
             <Navbar toggle={toggle}/> 
             <MainSection />
             <InfoSection {...homeObjOne} />
-            <InfoSection {...homeObjTwo} />
+            <MenuSection {...homeObjUno} />
             <InfoSection {...homeObjThree} />
             <ContactForm />
             <CateringForm />

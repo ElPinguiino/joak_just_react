@@ -11,13 +11,15 @@ const Products = () => {
     const [cart, setCart] = useState({});
 
     const getProducts = async () => {
-        const response = await axios.get('http://127.0.0.1:8000/api/product/')
-        setProducts(response.data)
+        const {data} = await axios.get('http://127.0.0.1:8000/api/product/')
+        setProducts(data)
     }
 
-    useEffect(() =>{
+    useEffect(() => {
         getProducts();
-    }, [])
+    }, []);
+
+    console.log(products)
 
     const classes = useStyles();
 

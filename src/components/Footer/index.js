@@ -12,24 +12,24 @@ const Footer = () => {
                             <FooterLinkTitle>About Us</FooterLinkTitle>
                             <FooterLink to="/">Who we are</FooterLink>
                             <FooterLink to="/">Reviews</FooterLink>
-                            <FooterLink to="/">Careers</FooterLink>
+                            <FooterLink to="/">Programs</FooterLink>
                             <FooterLink to="/">Terms of Service</FooterLink>
                         </FooterLinkItems>
                         <FooterLinkItems>
                             <FooterLinkTitle>Careers</FooterLinkTitle>
-                            <FooterLink to="/">Who we are</FooterLink>
-                            <FooterLink to="/">Reviews</FooterLink>
+                            <FooterLink to="/">Jobs</FooterLink>
+                            <FooterLink to="/">Company Values</FooterLink>
                             <FooterLink to="/">Careers</FooterLink>
                             <FooterLink to="/">Investors</FooterLink>
                         </FooterLinkItems>
                     </FooterLinksWrapper>
                     <FooterLinksWrapper>
                         <FooterLinkItems>
-                            <FooterLinkTitle>Investors</FooterLinkTitle>
-                            <FooterLink to="/">Who we are</FooterLink>
+                            <FooterLinkTitle>Community</FooterLinkTitle>
+                            <FooterLink to="/">Community Programs</FooterLink>
                             <FooterLink to="/">Advice</FooterLink>
                             <FooterLink to="/">How we started</FooterLink>
-                            <FooterLink to="/">Terms of Service</FooterLink>
+                            <FooterLink to="/">FAQs</FooterLink>
                         </FooterLinkItems>
                         <FooterLinkItems>
                             <FooterLinkTitle>Social Media</FooterLinkTitle>

@@ -84,7 +84,7 @@ export const StyledBackCardButton = styled.button`
     text-transform: uppercase;
     text-decoration: none;
     width: 100%;
-    top: -1075px;
+    top: -948px;
     position: relative;
 `
 export const StyledFrontCardButton = styled.button`
@@ -117,7 +117,7 @@ export const CateringFormInnerWrapper = styled.div`
 `
 
 export const StyledCateringFormContainer = styled.div`
-    top: -900px;
+    top: -850px;
     position: relative;
 
     @media screen and (max-width: 768px) {
@@ -229,7 +229,20 @@ export const StyledModalContainer = styled.div`
 `
 
 export const StyledModalButton = styled.button`
-
+    border: 3px yellow dotted;
+    color: #fff;
+    display: block;
+    background-color: purple;
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 15px 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 100%;
+    margin-left: -4rem;
 `
 
 export const StyledModal = styled(Modal)`

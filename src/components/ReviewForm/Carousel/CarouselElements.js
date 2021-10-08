@@ -26,6 +26,8 @@ export const StyledCarouselItem = styled.div`
 
     @media screen and (max-width: 800px) {
         margin-left: 0;
-        margin-top: -30rem;
+        margin-top: -35rem;
+        height: 225px;
+        width: 225px;
     }
 `

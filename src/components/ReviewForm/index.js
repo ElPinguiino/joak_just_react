@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ReviewFormContainer, ReviewFormWrapper, ReviewFormRow, ReviewFormContent, ReviewFormFormField, StyledH2, CarouselContainer } from './ReviewFormElements';
+import { ReviewFormContainer, ReviewFormWrapper, ReviewFormRow, ReviewFormContent, ReviewFormFormField, StyledH2, CarouselContainer, StyledH3, StyledServiceAveragesContainer } from './ReviewFormElements';
 import Form from './Form';
 import CarouselComponent  from '../ReviewForm/Carousel/Carousel'
 

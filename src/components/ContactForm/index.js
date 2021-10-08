@@ -9,10 +9,7 @@ const ContactForm = () => {
         <>
             <ContactFormContainer id="contact">
                 <ContactFormWrapper>
-                    <ContactHeadingWrapper>
                     <Heading>Contact Us</Heading>
-                    <Subtitle>Please use the form below for any questions, concerns, or feedback!</Subtitle>
-                    </ContactHeadingWrapper>
                     <InnerContainer>
                     <ContactFormRow>
                         <Column1>

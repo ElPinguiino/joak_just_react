@@ -51,7 +51,6 @@ const Form = () => {
     return (
         <>
                     <StyledCateringFormContainer>
-                        <StyledH2>Catering Request</StyledH2>
                         <StyledCateringForm>
                             <label htmlFor="firstName"></label>
                                 <StyledInput 

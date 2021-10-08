@@ -2,16 +2,12 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { StyledContactFormContainer, StyledContactForm, StyledInput, StyledFieldSet, StyledTextArea, StyledError, StyledButton, StyledH2 , StyledLabel, StyledSuccess } from './ContactFormElements';
+import { StyledContactFormContainer, StyledContactForm, StyledInput, StyledFieldSet, StyledTextArea, StyledError, StyledButton, StyledH2 , StyledLabel } from './ContactFormElements';
+import validate from './validateInfo';
+import useForm from './useForm';
 
 
-const Form = () => {
-
-    const [error, setError] = useState('');
-
-    const [success, setSuccess] = useState(false);
-
-    const [submitted, setSubmitted] = useState(false);
+const Form = ({ submitForm }) => {
 
     let history = useHistory();
 
@@ -21,7 +17,6 @@ const Form = () => {
     const [email, setEmail] = useState("")
     const [contactType, setContactType] = useState(null);
     const [message, setMessage] = useState("")
-    // const [image, setImage] = useState(null)
     
     const addContactForm = async () => {
         let formField = new FormData()
@@ -29,7 +24,7 @@ const Form = () => {
         formField.append('lastName', lastName)
         formField.append('phoneNumber', phoneNumber)
         formField.append('email', email)
-        formField.append('contactTyple', contactType)
+        formField.append('contactType', contactType)
         formField.append('message', message)
 
         await axios({
@@ -41,19 +36,12 @@ const Form = () => {
             history.push('/')
           })
 
-        setSubmitted(true);
-    }
+    };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("submitted");
-
-        // for (let key in { formField} ) {
-        //     if ({formField}[key] === '') {
-        //         setError(`You must provide the ${key}`)
-        //     }
-        // }
-    }
+    const { handleChange, handleSubmit, values, errors } = useForm(
+        submitForm,
+        validate
+    );
 
     return (
         <>
@@ -65,45 +53,86 @@ const Form = () => {
                         type="text" 
                         name="firstName" 
                         placeholder="First Name" 
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)} />
+                        defaultValue={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        
+                    />
+                    {errors.firstName && <p>{errors.firstName}</p>}
                     <label htmlFor="lastName"></label>
-                    <StyledInput type="text" name="lastName" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+                    <StyledInput 
+                        type="text" 
+                        name="lastName" 
+                        placeholder="Last Name" 
+                        defaultValue={lastName} 
+                        onChange={(e) => setLastName(e.target.value)}
+
+                    />
+                    {errors.lastName && <p>{errors.lastName}</p>}
                     <br />
                     <label htmlFor="phoneNumber"></label>
-                    <StyledInput type="text" name="phoneNumber" placeholder="Phone Number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}/>
+                    <StyledInput 
+                        type="text" 
+                        name="phoneNumber" 
+                        placeholder="Phone Number" 
+                        defaultValue={phoneNumber} 
+                        onChange={(e) => setPhoneNumber(e.target.value)}
+
+                    />
+                    {errors.phoneNumber && <p>{errors.phoneNumber}</p>}
                     <label htmlFor="email"></label>
-                    <StyledInput type="email" name="email" placeholder="Email" defaultValue={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <StyledInput 
+                        type="email" 
+                        name="email" 
+                        placeholder="Email" 
+                        defaultValue={email} 
+                        onChange={(e) => setEmail(e.target.value)}
+
+                    />
+                    {errors.email && <p>{errors.email}</p>}
                     <StyledFieldSet>
                         <legend>Contact Type</legend>
                         <label>
-                            <input type="radio" value="Question" name="contactType" onChange={(e) => setContactType(e.target.value)} />
+                            <input 
+                                type="radio" 
+                                defaultValue="Question" 
+                                name="contactType" 
+                                onChange={(e) => setContactType(e.target.value)} 
+
+                            />
                             Question
                         </label>
                         <label>
-                            <input type="radio" value="Concern" name="contactType" onChange={(e) => setContactType(e.target.value)} />
+                            <input 
+                                type="radio" 
+                                defaultValue="Concern" 
+                                name="contactType" 
+                                onChange={(e) => setContactType(e.target.value)} 
+
+                            />
                             Concern
                         </label>
                         <label>
-                            <input type="radio" value="Feedback" name="contactType" onChange={(e) => setContactType(e.target.value)} />
+                            <input 
+                                type="radio" 
+                                defaultValue="Feedback" 
+                                name="contactType" 
+                                onChange={(e) => setContactType(e.target.value)} 
+
+                            />
                             Feedback
                         </label>
                     </StyledFieldSet>
                     <StyledLabel htmlFor="message">Message:</StyledLabel>
                     <br />
-                    <StyledTextArea name="message" placeholder="Give us a little more info about your contact in order to better assist you!" defaultValue={message} onChange={(e) => setMessage(e.target.value)}/>
+                    <StyledTextArea 
+                        name="message" 
+                        placeholder="Give us a little more info about your contact in order to better assist you!" 
+                        defaultValue={values.message} 
+                        onChange={(e) => setMessage(e.target.value)} 
+                    
+                    />
+                    {errors.message && <p>{errors.message}</p>}
                     <br />
-                    {error && (
-                        <StyledError>
-                            <p>Error Message</p>
-                        </StyledError>
-                    )}
-
-                    {success && (
-                        <StyledSuccess>
-                            <p>Success</p>
-                        </StyledSuccess>
-                    )}
                     <StyledButton onClick={addContactForm}>Submit Contact</StyledButton>
                 </StyledContactForm>
             </StyledContactFormContainer>

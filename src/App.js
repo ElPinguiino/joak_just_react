@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './pages';
 import PlaceOrder from './pages/placeorder';
-import ContactForm from './components/ContactForm';
+import PreOrder from './pages/preorder'
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/placeorder" component={PlaceOrder} exact />
+        <Route path="/preorder" component={PreOrder} exact />
       </Switch>
     </Router>
   );

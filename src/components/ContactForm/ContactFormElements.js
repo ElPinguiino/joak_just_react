@@ -54,12 +54,12 @@ export const ContactHeadingWrapper = styled.div`
 `
 /* Styling for contact heading (orange box) */
 export const Heading = styled.h1`
-    margin-bottom: 24px;
-    font-size: 24px;
+    margin-top: 5rem;
+    font-size: 3rem;
     line-height: 1.1;
     text-align: center;
     font-weight: 800;
-    color: white;
+    color: black;
 
     @media screen and (max-width: 780px) {
         font-size: 18px;
@@ -90,6 +90,7 @@ export const InnerContainer = styled.div`
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 60px;
+    margin-top: 5rem;
     justify-content: center;
     background-color: #FFFFFF;
 
@@ -164,9 +165,9 @@ export const ContactFormColumn = styled.div`
     border-radius: 15px;
     border: 5px solid black;
     box-shadow: 10px 10px;
-    background: #AA076B;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #61045F, #AA076B);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #61045F, #AA076B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #f857a6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff5858, #f857a6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff5858, #f857a6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     @media screen and (max-width: 1050px) {
         width: 155%;
@@ -413,4 +414,16 @@ export const StyledH2 = styled.h2`
 
 export const StyledLabel = styled.label`
     color: white;
+`
+
+// Styling for the Contact Form success
+export const FormSuccessContainer = styled.div`
+
+`
+export const FormSuccessH1 = styled.h1`
+
+`
+
+export const FormSuccessImage = styled.img`
+
 `

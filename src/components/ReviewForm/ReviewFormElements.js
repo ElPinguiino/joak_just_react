@@ -216,3 +216,11 @@ export const ShowReviewContainer = styled.div`
 export const ShowReviewP = styled.p`
     
 `
+
+export const StyledServiceAveragesContainer = styled.div`
+    margin-top: 400px;
+`
+
+export const StyledH3 = styled.h3`
+
+`
