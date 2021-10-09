@@ -1,11 +1,8 @@
 /* eslint-disable no-undef */
 import React, { useState } from 'react';
-import Select from "react-select";
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { ReviewFormInnerContainer, ReviewFormInnerWrapper, ReviewForm, ReviewFormFirstName, ReviewFormLastInitial, ReviewFormDate, ReviewFormFoodRating, ReviewFormServiceRating, ReviewFormMessage, Input, Button } from './ReviewFormElements';
-
-import { StyledReviewFormContainer, StyledReviewForm, StyledInput, StyledFieldSet, StyledTextArea, StyledError, StyledButton, StyledH2, StyledLabel } from './ReviewFormElements';
+import { StyledReviewFormContainer, StyledReviewForm, StyledInput, StyledFieldSet, StyledTextArea, StyledButton, StyledH2 } from './ReviewFormElements';
 
 const Form = () => {
 
@@ -19,7 +16,7 @@ const Form = () => {
     let history = useHistory();
 
     const addReviewForm = async () => {
-        let formField = new FormData
+        let formField = new FormData()
         formField.append('first_name', firstName)
         formField.append('last_initial', lastInitial)
         formField.append('date_visited', dateVisited)

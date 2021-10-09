@@ -5,21 +5,21 @@ import { Grid } from '@material-ui/core';
 import Product from './Product/index';
 import useStyles from './PlaceOrderElements';
 
-const Products = () => {
+const Products = ({ products, onAddToCart }) => {
 
-    const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState({});
+    // const [products, setProducts] = useState([]);
+    // const [cart, setCart] = useState({});
 
-    const getProducts = async () => {
-        const {data} = await axios.get('http://127.0.0.1:8000/api/product/')
-        setProducts(data)
-    }
+    // const getProducts = async () => {
+    //     const {data} = await axios.get('http://127.0.0.1:8000/api/product/')
+    //     setProducts(data)
+    // }
 
-    useEffect(() => {
-        getProducts();
-    }, []);
+    // useEffect(() => {
+    //     getProducts();
+    // }, []);
 
-    console.log(products)
+    // console.log(products)
 
     const classes = useStyles();
 
@@ -29,7 +29,7 @@ const Products = () => {
                 <Grid container justify="center" spacing={4}>
                     {products.map((product) => (
                         <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-                            <Product product={product} />
+                            <Product product={product} onAddToCart={onAddToCart} />
                         </Grid>
                     ))}
                 </Grid>

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { StyledCateringFormContainer, StyledCateringForm, StyledInput, StyledFieldSet, StyledTextArea, StyledError, StyledButton, StyledH2, StyledLabel, CateringFormInformation, CateringFormInformationTitle, CateringFormInformationSubtitle } from './CateringFormElements';
+import { StyledCateringFormContainer, StyledCateringForm, StyledInput, StyledFieldSet, StyledTextArea, StyledError, StyledButton, StyledLabel, CateringFormInformation, CateringFormInformationTitle, CateringFormInformationSubtitle } from './CateringFormElements';
 
 const Form = () => {
 
@@ -22,7 +22,7 @@ const Form = () => {
     const [paymentType, setPaymentType] = useState(null);
 
     const addCateringForm = async () => {
-        let formField = new FormData
+        let formField = new FormData()
 
         formField.append('first_name', firstName)
         formField.append('last_name', lastName)

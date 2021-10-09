@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { CateringFormContainer, CateringFormImageContainer, CateringFormWrapper, H1, CateringSectionBg, ImageBg, StyledFrontCardContainer, StyledImage, StyledBackCardButton, StyledFrontCardButton, StyledBackCardContainer, StyledModal, StyledModalContainer } from './CateringFormElements';
+import { CateringFormContainer, CateringFormImageContainer, CateringFormWrapper, StyledFrontCardContainer, StyledImage, StyledBackCardButton, StyledFrontCardButton, StyledBackCardContainer, StyledModal, StyledModalContainer } from './CateringFormElements';
 import background from '../../images/onlinecatering.png';
 import backofform from '../../images/backofform.png';
 import ReactCardFlip from 'react-card-flip';
 import Form from './Form';
-import Modal from './Modal';
 
 const CateringForm = () => {
 

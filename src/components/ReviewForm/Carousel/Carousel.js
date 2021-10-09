@@ -1,7 +1,6 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { StyledCarouselComponent, StyledCarouselItem } from './CarouselElements';
-import { ShowReviewContainer, ShowReviewP } from './../ReviewFormElements';
 
 const CarouselComponent = () => {
 
