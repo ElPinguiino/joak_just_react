@@ -166,7 +166,7 @@ const Form = () => {
                                         Card
                                     </label>
                                 </StyledFieldSet>
-                                <StyledError><p>Error Message</p></StyledError>
+                                {/* <StyledError><p>Error Message</p></StyledError> */}
                                 <StyledButton onClick={addCateringForm}>Submit Request</StyledButton>
                         </StyledCateringForm>
                     </StyledCateringFormContainer>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin, FaPhone, FaMapMarker, FaMailBulk } from 'react-icons/fa';
+// import { Link } from 'react-router-dom';
+import { FaPhone, FaMapMarker, FaMailBulk } from 'react-icons/fa';
 
 export const ContactFormContainer = styled.div`
     background-color: #fff;

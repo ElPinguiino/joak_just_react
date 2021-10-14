@@ -6,23 +6,12 @@ import {
     MenuSectionRow,
     Column1,
     Column2,
-    TextWrapper,
-    TopLine,
-    Heading,
-    Subtitle,
-    BtnWrap,
     ImgWrap,
     Img,
-    CardContainer,
-    StyledCardMedia,
-    StyledCard,
-    StyledTypography,
     StyledItemTitle,
     StyledMenuSectionTitle
 
 } from './MenuSectionElements';
-import { Grid } from '@material-ui/core';
-import MenuCard from './MenuCard';
 import axios from 'axios';
 
 const MenuSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, description, buttonLabel, img, alt, primary, dark, dark2}) => {
@@ -45,25 +34,6 @@ const MenuSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkT
             <MenuSectionWrapper>
                 <MenuSectionRow imgStart={imgStart}>
                     <Column1>
-                        {/* <CardContainer>
-                            <StyledCardMedia>
-                                <StyledCard>
-                                    <StyledTypography>
-                                        Hello
-                                    </StyledTypography>
-                                </StyledCard>
-                            </StyledCardMedia>
-                        </CardContainer> */}
-                        {/* <main className="">
-                            <div className=""/>
-                            <Grid container justify="center" spacing={4}>
-                                {products.map((product) => (
-                                    <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-                                        <MenuCard product={product} />
-                                    </Grid>
-                                ))}
-                            </Grid>
-                        </main> */}
                         <StyledMenuSectionTitle>Menu Items</StyledMenuSectionTitle>
                         <br />
                         <StyledItemTitle>Birria Taco ............................................................... $2.50</StyledItemTitle>

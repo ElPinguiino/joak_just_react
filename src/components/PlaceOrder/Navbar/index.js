@@ -14,13 +14,13 @@ const Navbar = () => {
             <AppBar position="fixed" className={classes.appBar} color="inherit">
                 <Toolbar>
                     <Typography variant="h6" className={classes.title} color="inherit">
-                        <img src={logo} alt="joaklogo" height="35px" className={classes.image} />
+                        <img src={logo} alt="joaklogo" height="50px" className={classes.image} />
                         Juan Of A Kind
                     </Typography>
                     <div className={classes.grow} />
                     <div className={classes.button}>
                         <IconButton aria-label="Mi canasta" color="inherit">
-                            <Badge badgeContent={2} color="secondary">
+                            <Badge badgeContent={10} color="secondary">
                                 <ShoppingCart />
                             </Badge>
                         </IconButton>

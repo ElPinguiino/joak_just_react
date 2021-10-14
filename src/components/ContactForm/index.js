@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin } from 'react-icons/fa';
-import { ContactFormContainer, ContactFormWrapper, ContactHeadingWrapper, Heading, Subtitle, InnerContainer, ContactFormRow, ContactFormColumn, Column1, Column2, ContactInfoColumn, InfoHeading, InfoSubtitle, InfoNumber, InfoEmail, InfoAddress, SocialMedia, SocialMediaWrap, SocialIcons, SocialIconLink, FirstInnerColumn, SecondInnerColumn, HorizontalColumn, SecondHorizontalColumn, H1, H4, FaPhoneStyled, FaMailBulkStyled, FaMapMarkerStyled } from './ContactFormElements';
+import { ContactFormContainer, ContactFormWrapper, Heading, InnerContainer, ContactFormRow, ContactFormColumn, Column1, Column2, ContactInfoColumn, InfoHeading, InfoSubtitle, InfoNumber, InfoEmail, InfoAddress, SocialMedia, SocialMediaWrap, SocialIcons, SocialIconLink, FaPhoneStyled, FaMailBulkStyled, FaMapMarkerStyled } from './ContactFormElements';
 import Form from './Form';
 
 const ContactForm = () => {

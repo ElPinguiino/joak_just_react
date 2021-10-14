@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './pages';
 import PlaceOrder from './pages/placeorder';
 import PreOrder from './pages/preorder'
+// import AdminComponent from './pages/admin'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" component={Home} exact />
         <Route path="/placeorder" component={PlaceOrder} exact />
         <Route path="/preorder" component={PreOrder} exact />
+        {/* <Route path="/admin" component={AdminComponent} exact /> */}
       </Switch>
     </Router>
   );

@@ -136,7 +136,7 @@ export const StyledInput = styled.input`
     padding: 0.5em;
     margin: 0.5em;
     width: 15em;
-    color: palevioletred;
+    color: #fde069;
     // background: #859398;
     border: 2px black solid;
     box-shadow: 5px 5px;
@@ -145,7 +145,7 @@ export const StyledInput = styled.input`
 export const StyledFieldSet = styled.fieldset`
     padding: 0.5em;
     margin: 0.5em;
-    color: palevioletred;
+    color: #fde069;
     background: ;
     box-shadow: 5px 5px;
     border: 1px solid white;
@@ -175,7 +175,7 @@ export const StyledTextArea = styled.textarea`
     border-radius: 10px;
     width: 100%;
     min-height: 100px;
-    color: palevioletred;
+    color: #fde069;
     box-shadow: 5px 5px;
     resize: none;
 `
@@ -183,7 +183,7 @@ export const StyledTextArea = styled.textarea`
 export const StyledButton = styled.button`
     display: block;
     background-color: white;
-    color: palevioletred;
+    color: #fde069;
     font-size: 1rem;
     border: black 1px solid;
     border-radius: 10px;
@@ -203,7 +203,7 @@ export const StyledError = styled.div`
 export const StyledH2 = styled.h2`
     text-align: center;
     color: white;
-    text-shadow: palevioletred 2px 4px;
+    text-shadow: #fde069 2px 4px;
     font-size: 2.5rem;
 `
 
@@ -229,7 +229,7 @@ export const StyledModalContainer = styled.div`
 `
 
 export const StyledModalButton = styled.button`
-    border: 3px yellow dotted;
+    border: thick double 1px solid;
     color: #fff;
     display: block;
     background-color: purple;
