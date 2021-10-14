@@ -16,18 +16,6 @@ import axios from 'axios';
 
 const MenuSection = ({lightBg, id, imgStart, topLine, lightText, headline, darkText, description, buttonLabel, img, alt, primary, dark, dark2}) => {
     
-    
-    const [products, setProducts] = useState([]);
-
-    const getProducts = async () => {
-        const response = await axios.get('http://127.0.0.1:8000/api/product/')
-        setProducts(response.data)
-    }
-
-    useEffect(() =>{
-        getProducts();
-    }, [])
-    
     return (
         <>
         <MenuSectionContainer lightBg={lightBg} id={id}>

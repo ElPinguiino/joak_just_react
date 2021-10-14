@@ -25,7 +25,6 @@ const PlaceOrder = () => {
             <Navbar />
             <FilterButtons />
             <Products products={products} error={error} loading={loading}/>
-            {/* <PlaceOrderCart cart={cart} /> */}
         </>
     )
 }

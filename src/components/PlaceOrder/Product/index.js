@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from '@material-ui/core';
 import { AddShoppingCart } from '@material-ui/icons';
+import { useHistory } from 'react-router-dom';
+
 
 import useStyles from './ProductElement';
 
 const Product = ({ product, handleAddToCart }) => {
     const classes = useStyles();
-
+    let history = useHistory();
     const [qty, setQty] = useState(1);
 
-    const addToCartHandler = () =>{
-        console.log('Add to cart')
+    const addToCartHandler = () => {
+        console.log('Add to cart', product.product_id)
+        history.push(`/cart/${product.product_id}?qty=${qty}`)
     }
 
     return (
